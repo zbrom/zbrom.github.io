@@ -1,0 +1,38 @@
+I"º<p>GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880. Here is a basic guide how to setup GPG encryption on Arch.</p>
+
+<hr />
+
+<h5 id="generating-a-new-key">Generating a New Key:</h5>
+
+<p>Install gnupg:</p>
+
+<p><code>pacman -S gnupg</code></p>
+
+<p>Create a key pair:</p>
+
+<p><code>gpg --full-gen-key</code></p>
+
+<h5 id="exporting-public-key">Exporting Public Key:</h5>
+
+<p>Export your public key to share it with others.</p>
+
+<p><code>gpg --export --armor --output publickey.asc user-id</code></p>
+
+<h5 id="importing-public-or-private-keys">Importing Public or Private Keys:</h5>
+
+<p>This command can be utilized to import a public or private key.</p>
+
+<p><code>gpg --import key.asc</code></p>
+
+<h5 id="backup-private-key">Backup Private Key:</h5>
+
+<p><code>gpg --export-secret-keys --armor --output privkey.asc user-id</code></p>
+
+<h5 id="additional-information">Additional Information:</h5>
+
+<p>GNOME Keyring can be managed with Seahorse. Package: seahorse</p>
+
+<h5 id="references">References:</h5>
+
+<p><a href="https://wiki.archlinux.org/index.php/GnuPG#Export_your_public_key" target="_blank">https://wiki.archlinux.org/index.php/GnuPG#Export_your_public_key</a></p>
+:ET
