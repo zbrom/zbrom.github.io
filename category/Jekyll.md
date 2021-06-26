@@ -1,5 +1,5 @@
 ---
 layout: category
-title: posts/jekyll
-permalink: '/posts/jekyll'
+title: dropdown
+permalink: '/dropdown/'
 ---

@@ -1,0 +1,127 @@
+I"�<p>Here you will find some basic useful command line interface (CLI) commands for Arch Linux.  Commands should apply to all Arch builds assuming you are using systemd.  For additional flags, please view the man pages of any of the following applications.
+<strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><em>__</em></p>
+
+<h4 id="package-management"><em>Package Management:</em></h4>
+
+<h5 id="pacman">Pacman:</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Update your system:
+</code></pre></div></div>
+
+<p><code>pacman -Syu</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Download a new package:
+</code></pre></div></div>
+
+<p><code>pacman -S</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Display information about a package:
+</code></pre></div></div>
+
+<p><code>pacman -Si</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Search for a locally installed package:
+</code></pre></div></div>
+
+<p><code>pacman -Ss</code></p>
+
+<p>Yay (Download from the <a href="https://aur.archlinux.org" target="_blank">Arch User Repository</a>):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Update your system:
+</code></pre></div></div>
+
+<p><code>yay -Syu</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Download a new package:
+</code></pre></div></div>
+
+<p><code>yay -S</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Display information about a package:
+</code></pre></div></div>
+
+<p><code>yay -Si</code></p>
+
+<h5 id="systemd-commands">Systemd Commands</h5>
+
+<p>Systemctl:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start a service:
+</code></pre></div></div>
+
+<p><code>systemctl start [name of service].service</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Stop a service:
+</code></pre></div></div>
+
+<p><code>systemctl stop [name of service].service</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable a service permanently:
+</code></pre></div></div>
+
+<p><code>systemctl enable [name of service].service</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Disable a service:
+</code></pre></div></div>
+
+<p><code>systemctl disable [name of service].service</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check the status of a service:
+</code></pre></div></div>
+
+<p><code>systemctl status [name of service].service</code></p>
+
+<h4 id="user-management"><em>User Management</em></h4>
+
+<p>Adding Users</p>
+
+<p>Add users with:  useradd</p>
+
+<p><code>useradd -m -g [initial_group] -G [additional_groups] -s [login_shell] [username]</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-m creates the user home directory as /home/[username]; within their home directory, a non-root user can write files, delete them, install programs, and so on.
+-g defines the group name or number of the user’s initial login group; the group name must exist; if a group number is provided, it must refer to an already existing group; if not specified, the behavior of useradd will depend on the USERGROUPS_ENAB variable contained in /etc/login.defs.
+-G introduces a list of supplementary groups which the user is also a member of; each group is separated from the next by a comma, with no intervening spaces; the default is for the user to belong only to the initial group.
+-s defines the path and filename of the user’s default login shell; Arch Linux init scripts use Bash; after the boot process is complete, the default login shell is the one specified here; ensure the chosen shell package is installed if choosing something other than Bash.
+</code></pre></div></div>
+
+<p>Change a password:</p>
+
+<p><code>passwd</code></p>
+
+<p>Remove a user:</p>
+
+<p><code>userdel -r [username]</code></p>
+
+<h4 id="group-management">Group Management</h4>
+
+<p>Display group membership along with the user’s UID and associated GIDs:</p>
+
+<p><code>id [user]</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List all groups on the system:
+</code></pre></div></div>
+
+<p><code>cat /etc/group</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Create a new group:
+</code></pre></div></div>
+
+<p><code>groupadd [group]</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Remove a group:
+</code></pre></div></div>
+
+<p><code>groupdel [group]</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Add a user to a group:
+</code></pre></div></div>
+
+<p><code>gpasswd -a [user] [group]</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Remove a user from a group:
+</code></pre></div></div>
+
+<p><code>gpasswd -d [user] [group]</code></p>
+
+:ET

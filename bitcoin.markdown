@@ -1,5 +1,6 @@
 ---
 layout: page
+background: '/img/ghorr_banner.png'
 title: Bitcoin
 permalink: /bitcoin/
 ---
