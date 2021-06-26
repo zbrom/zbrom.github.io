@@ -70,7 +70,7 @@ LocalFileSigLevel = Optional<br>
 </div>
 
 Working example:
-![Alt text](../../img/pacman.png)
+![](../../img/arch/pacman.png)
 
 What is the meaning of life?
 Using vim (vi improved), you can find out the meaning of life…or death?

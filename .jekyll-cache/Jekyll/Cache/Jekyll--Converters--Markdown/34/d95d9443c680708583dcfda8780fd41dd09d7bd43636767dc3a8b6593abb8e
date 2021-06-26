@@ -1,0 +1,22 @@
+I"}<h4 id="introduction">Introduction:</h4>
+
+<p>This section of the site will contain recommendations on how to eliminate Google services from your life. Expect new content to follow. ghorr currently recommends running LineageOS without gapps installed. Check out this introductory video to DeGoogled phones by Rob Braxman.</p>
+
+<iframe id="lbry-iframe" width="560" height="315" src="https://odysee.com/$/embed/degoogled/76ccaa024e2d6ae907d6173bf88cc757aee87bac?r=J4ivBwpLWDqRztQmJhvchdqbURumyD8b" allowfullscreen=""></iframe>
+
+<p>Also, be sure to check out the <a href="https://www.reddit.com/r/degoogle/" target="_blank">/r/degoogle</a> subreddit.</p>
+
+<h4 id="recommended-search-engines">Recommended Search Engines:</h4>
+
+<p><a href="https://duckduckgo.com" target="_blank">https://duckduckgo.com</a></p>
+
+<p><a href="http://ghorr.org/search" target="_blank">http://ghorr.org/search</a></p>
+
+<h4 id="recommended-phone-os">Recommended Phone OS:</h4>
+
+<p>ghorr recommends either LineageOS without gapps or LineageOS with microG, if you require support for apps that depend on GSF services. MicroG defines themselves as “a free-as-in-freedom re-implementation of Google’s proprietary Android user space apps and libraries.”</p>
+
+<p><a href="https://lineageos.org" target="_blank">https://lineageos.org</a></p>
+
+<p><a href="https://lineage.microg.org" target="_blank">https://lineage.microg.org</a></p>
+:ET
