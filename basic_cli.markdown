@@ -2,12 +2,14 @@
 layout: page
 background: '/img/ghorr_banner.png'
 title: Basic CLI
+date: 2021-06-25
 categories : dropdown
 permalink: /arch/basic_cli/
 ---
 
 Here you will find some basic useful command line interface (CLI) commands for Arch Linux.  Commands should apply to all Arch builds assuming you are using systemd.  For additional flags, please view the man pages of any of the following applications.
-________________________________________________________________________________________________________________
+
+____________________________________
 
 #### *Package Management:*
 

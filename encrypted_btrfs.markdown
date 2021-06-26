@@ -2,6 +2,7 @@
 layout: page
 background: '/img/ghorr_banner.png'
 title: Encrypted BTRFS Root with EFI
+date: 2021-06-25
 categories : dropdown
 permalink: /arch/encrypted_btrfs/
 ---
@@ -283,6 +284,7 @@ We mounted a few things into mnt, lets unmount all of them recursively:
 Lets reboot, in my case it comes right up 🙂
 
 <code>reboot</code>
-References:
+
+##### References:
 
 [https://wiki.archlinux.org/index.php/Installation_guide](https://wiki.archlinux.org/index.php/Installation_guide){:target="_blank"}

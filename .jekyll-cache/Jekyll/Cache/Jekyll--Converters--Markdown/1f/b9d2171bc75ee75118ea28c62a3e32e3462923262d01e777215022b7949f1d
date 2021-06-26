@@ -1,0 +1,52 @@
+I"µ	<p>Arch Linux only comes with the bare minimum essential fonts.  I had not realized it was necessary to install additional fonts until after libreoffice was installed.  This guide will provide the user with some useful fonts for a typical Arch install.  For additional fonts please visit the <a href="https://wiki.archlinux.org/index.php/Fonts" target="_blank">Arch Wiki</a>.</p>
+
+<hr />
+
+<h5 id="font-installation">Font Installation:</h5>
+
+<p>For compatibility with office documents, I recommend installing Microsoft Fonts and the Liberation Fonts.</p>
+
+<p><code>pacman -S ttf-liberation &amp;&amp; yaourt -S ttf-ms-fonts</code></p>
+
+<p>I frequently use Chinese, Korean, Japanese characters in filenames; the following asian fonts are optional if you desire the compatibility.</p>
+
+<p><code>pacman -S ttf-hannom ttf-baekmuk &amp;&amp; yaourt -S ttf-vlgothic</code></p>
+
+<h5 id="xorg-configuration">Xorg Configuration:</h5>
+
+<p>After installing desired fonts, the font paths must be added to the xorg file.</p>
+
+<p>Go to /usr/share/fonts/ to display all installed fonts.</p>
+
+<p><img src="../../img/arch/fonts.png" alt="" /></p>
+
+<p>Edit your xorg config file with your favorite text editor:</p>
+
+<p><code>nano /etc/X11/xorg.conf</code></p>
+
+<p>Here is a sample xorg configuration, you must modify it to match the fonts installed in your fonts folder; then add it to xorg.conf.</p>
+
+<p>Code:</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code># Let X.Org know about the custom font directories</code><br />
+<code>Section "Files"</code><br />
+<code>FontPath "/usr/share/fonts/75dpi"</code><br />
+<code>FontPath "/usr/share/fonts/100dpi"</code><br />
+<code>FontPath "/usr/share/fonts/cyrillic"</code><br />
+<code>FontPath "/usr/share/fonts/encodings"</code><br />
+<code>FontPath "/usr/share/fonts/kanjistrokeorders"</code><br />
+<code>FontPath "/usr/share/fonts/misc"</code><br />
+<code>FontPath "/usr/share/fonts/TTF"</code><br />
+<code>FontPath "/usr/share/fonts/util"</code><br />
+<code>EndSection</code>
+</div>
+</div>
+
+<p>All your fonts should now be recognized; a reboot may be required.</p>
+
+<h5 id="references">References:</h5>
+
+<p><a href="https://wiki.archlinux.org/index.php/Fonts" target="_blank">https://wiki.archlinux.org/index.php/Fonts</a></p>
+:ET

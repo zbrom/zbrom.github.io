@@ -1,0 +1,83 @@
+I"S<p>Google Authenticator is open source software, currently licensed under the Apache 2.0 license. It is an excellent supplement to a working RSA model for additional security measures.  It utilizes one-time passcodes (OTP) to provide authentication.</p>
+
+<p>ghorr no longer recommends using the Google Authenticator Android app because the application is no longer open source. <a href="https://f-droid.org/en/packages/org.shadowice.flocke.andotp" target="_blank">andOTP</a> is now recommended, which is Free and Open Source Software (FOSS), available on FDroid.</p>
+
+<hr />
+
+<h4 id="setting-up-google-authenticator">Setting up Google Authenticator</h4>
+
+<h5 id="installing-google-authenticator">Installing Google Authenticator</h5>
+
+<p>You can easily install google-authenticator-libpam-hg from AUR using yaourt:</p>
+
+<p><code>yaourt -S google-authenticator-libpam-git</code></p>
+
+<h5 id="adjusting-the-sshd-and-pam-configuration-files">Adjusting the SSHD and PAM configuration files</h5>
+
+<p>Open /etc/ssh/sshd_config with your favorie text editor</p>
+
+<p><code>nano /etc/ssh/sshd_config</code></p>
+
+<p>Make sure that <span style="background-color: #ff9900;">ChallengeResponseAuthentication</span> is set to <span style="background-color: #ff9900;">yes</span>.</p>
+
+<p>Next you have to edit /etc/pam.d/sshd. We are only interested in the lines starting with auth.</p>
+
+<p><code>nano /etc/pam.d/sshd</code></p>
+
+<p>If you want to have to enter both your regular password and a one-time password to login, change the configuration like this:</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code>auth required pam_unix.so</code><br />
+<code>auth required pam_google_authenticator.so</code><br />
+<code>auth required pam_env.so</code><br />
+</div>
+</div>
+
+<p><span style="background-color: #ff0000; color: #ffffff;">Warning: Every user who has not yet generated a secret file will no longer be able to login via SSH.</span></p>
+
+<p>If you want to be able to login using your regular password or a one-time password, change the configuration file like this:</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code>auth sufficient pam_unix.so</code><br />
+<code>auth sufficient pam_google_authenticator.so</code><br />
+<code>auth required pam_env.so</code><br />
+</div>
+</div>
+
+<h4 id="using-google-authenticator">Using Google Authenticator</h4>
+
+<p>Just run the command google-authenticator as the user you want to generate the secret for and follow the instructions.</p>
+
+<p><code>google-authenticator</code></p>
+
+<p>You probably want to install the <a href="https://f-droid.org/en/packages/org.shadowice.flocke.andotp" target="_blank">andOTP</a> app for Android to generate your one-time passwords.</p>
+
+<p>google-authenticator will show you a QR-code you can scan on your phone if you have installed the qrencode packge. Otherwise you have to enter the secret key manually on your phone.</p>
+
+<p>If an one-time password is required for logging in, you should print out your emergency codes and store them in a safe place.</p>
+
+<h4 id="removing-google-authenticator">Removing Google Authenticator</h4>
+
+<p>These are the defaults for the changed parts of the configuration files:</p>
+
+<p><code>nano /etc/ssh/sshd_config</code></p>
+
+<p>Set <span style="background-color: #ff9900;">ChallengeResponseAuthentication</span> to <span style="background-color: #ff9900;">no</span></p>
+
+<p><code>nano /etc/pam.d/sshd</code></p>
+
+<p>Code:</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code>auth required pam_unix.so</code><br />
+<code>auth required pam_env.so</code><br />
+</div>
+</div>
+
+<h4 id="references">References</h4>
+
+<p><a href="https://wiki.archlinux.org/title/Google_Authenticator" target="_blank">https://wiki.archlinux.org/title/Google_Authenticator</a></p>
+:ET

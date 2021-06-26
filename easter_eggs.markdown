@@ -2,6 +2,7 @@
 layout: page
 background: '/img/ghorr_banner.png'
 title: Easter Eggs
+date: 2013-08-01
 categories : dropdown
 permalink: /arch/easter_eggs/
 ---

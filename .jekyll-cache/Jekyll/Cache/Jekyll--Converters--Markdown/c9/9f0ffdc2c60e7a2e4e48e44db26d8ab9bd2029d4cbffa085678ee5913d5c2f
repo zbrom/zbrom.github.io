@@ -1,0 +1,12 @@
+I"�	<p>Imagine a network where communication could be completely free from influence by corporations, politicians, and government.  Additionally, imagine a network readily available from all parts of the world, where the content is controlled by the users and censorship was non-existent.  The Othernet is the future to help in solidifying this scenario, providing anonymized and decentralized content free to the users.</p>
+
+<p>Presently, 60% of the world’s population is unable to access the basic information provided by the Internet.  The Othernet aims to provide free broadcasting of useful and relevant news, information, and educational content.  Content is delivered via satellite through a one-way data stream.  Individual usage is always anonymous, unimpeded by sovereign censors; it’s like the shortwave radio of the 21st century.</p>
+
+<p>The Othernet went live back in August 2014, and was previously called the Outernet.  In order to access it, several components are required.  In order to receive transmissions, a Raspberry Pi, satellite dish, LNB (Low Noise Block), and USB satellite tuner are needed.  The satellite dish must be positioned to connect to the Galaxy 19 or Hotbird (13 East) space satellites in order to receive content.  Content is delivered to the Raspberry Pi, utilizing a USB satellite tuner.  The data received is stored on the Raspberry Pi, which can then be accessed when a via a Wi-Fi dongle connected to the Raspberry Pi.  Currently, this method only works with specific components when dealing with the USB satellite tuner and USB Wi-Fi dongles.  A mobile receiver is currently in development, as long as the Pillar, self contained data receiver.</p>
+
+<p>The Othernet plans to allow two-way communication in the future, but currently is strictly a one way system.  Users are currently limited to 200 MB of bandwidth per day.  For more information and availability, please visit the Othernet Official Website:  <a href="https://www.othernet.is" target="_blank">https://www.othernet.is</a></p>
+
+<p>How to build your own Othernet receiver:  <a href="https://forums.othernet.is/t/build-your-own-outernet-receiver-orx-pre-alpha-install-scripts/566" target="_blank">https://forums.othernet.is/t/build-your-own-outernet-receiver-orx-pre-alpha-install-scripts/566</a></p>
+
+<p>Where to buy equipment:  <a href="https://hypermegasat.com/all-products/ols/all?sortOption=descend_by_popularity" target="_blank">https://hypermegasat.com/all-products/ols/all?sortOption=descend_by_popularity</a></p>
+:ET

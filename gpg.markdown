@@ -2,6 +2,7 @@
 layout: page
 background: '/img/ghorr_banner.png'
 title: GPG Encryption
+date: 2021-06-25
 categories : dropdown
 permalink: /arch/gpg/
 ---

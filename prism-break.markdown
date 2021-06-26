@@ -2,6 +2,7 @@
 layout: page
 background: '/img/ghorr_banner.png'
 title: Prism Break
+date: 2021-06-26
 categories : dropdown
 permalink: /security/prism-break/
 ---

@@ -2,6 +2,7 @@
 layout: page
 background: '/img/ghorr_banner.png'
 title: DeGoogle
+date: 2021-06-25
 #categories : dropdown
 permalink: /degoogle/
 ---

@@ -1,0 +1,26 @@
+I"-<p>This tutorial provides an effective method for backing up your boot hard drive which contains your OS.  Backing up your system is very essential to protect against data loss; additionally if something where to go drastically wrong with your system, you could restore to a previous image.  I recommend backing up your system drive at least once every three months.  Additionally data backups should occur much more often.</p>
+
+<hr />
+
+<p>Use fdisk or blkid to identify which drive you would like to backup or restore (e.g. /dev/sda).</p>
+
+<p><code>fdisk -l</code></p>
+
+<h5 id="backing-up-your-system">Backing up your system:</h5>
+
+<p>Use the dd command to backup your system.  (I chose to use gzip compression in order to save space, because dd will copy every sector of your hard drive.)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Change /dev/sda to your desired drive;  make sure to include the proper path for the destination of the backup.
+</code></pre></div></div>
+
+<p><code>dd if=/dev/sda | gzip &gt; /[your desired path]/backup.gz</code></p>
+
+<h5 id="restoring-your-system">Restoring your system:</h5>
+
+<p>Use the gzip command piped into the dd command to restore your system.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Change /dev/sda to your desired drive;  make sure to include the proper path for the location of the backup to restore.
+</code></pre></div></div>
+
+<p><code>gzip -dc /[your desired path]/backup.gz | dd of=/dev/sda</code></p>
+:ET

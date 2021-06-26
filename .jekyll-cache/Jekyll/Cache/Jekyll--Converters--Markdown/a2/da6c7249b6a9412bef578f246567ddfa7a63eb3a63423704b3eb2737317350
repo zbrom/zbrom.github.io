@@ -1,0 +1,8 @@
+I"ø<p>This guide allows you to disable journaling on a particular volume. This can be useful for flash drives or SD cards if desired.</p>
+
+<hr />
+
+<p>Run the following command from a terminal.</p>
+
+<p><code>tune2fs -O ^has_journal /dev/sdX</code></p>
+:ET

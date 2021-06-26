@@ -31,3 +31,12 @@ In addition to bitcoin, there are many other cryptographic coins starting to com
 
 #### Conclusion
 Bitcoin has the potential to become a competitor for online anonymous transactions as a world currency; it acts as the online equivalent to cash. It is already becoming prevalent for online services companies and various other stores. Additionally some restaurants and bars now accept the cryptographic currency. As the currency is maintained by the community, as long as there is an interest in bitcoin, demand for bitcoins will continue to rise. It maintains the power of banking with the individual, and proposes a solution for anonymity.
+
+#### Donate
+Support ghorr; if you found our site useful, consider donating some crypto!
+
+Bitcoin: bc1qahn62qxnn5y9eqvs42g5zth8zcae4p0f0v6zjj
+
+Dogecoin: DABtSRZ2sKL4ZB8TtN9g4no5Q6USBFgskT
+
+Litecoin: ltc1qx7p0xl0mesrh3kx6a4adjh7x46p7ptzwgh6d3d

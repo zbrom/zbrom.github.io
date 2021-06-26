@@ -2,6 +2,7 @@
 layout: page
 background: '/img/ghorr_banner.png'
 title: LUKS Drive Encryption
+date: 2021-06-26
 categories : dropdown
 permalink: /security/luks_encryption/
 ---

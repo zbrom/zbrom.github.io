@@ -1,4 +1,4 @@
-I"e&<p>So there are many reasons why you may want to encrypt your root partition and you must have one if you are looking here.</p>
+I"&<p>So there are many reasons why you may want to encrypt your root partition and you must have one if you are looking here.</p>
 
 <p>There are a million different ways you could set up your partition scheme. I’m just going to show you one way here. I’m going to assume you have a decent amount of experience with Linux because encryption and Arch Linux are not for n00bs.</p>
 
@@ -274,8 +274,9 @@
 
 <p>Lets reboot, in my case it comes right up 🙂</p>
 
-<p><code>reboot</code>
-References:</p>
+<p><code>reboot</code></p>
+
+<h5 id="references">References:</h5>
 
 <p><a href="https://wiki.archlinux.org/index.php/Installation_guide" target="_blank">https://wiki.archlinux.org/index.php/Installation_guide</a></p>
 :ET

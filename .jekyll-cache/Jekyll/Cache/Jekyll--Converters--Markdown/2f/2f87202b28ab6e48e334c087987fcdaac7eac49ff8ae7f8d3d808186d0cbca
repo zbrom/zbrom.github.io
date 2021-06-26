@@ -1,0 +1,8 @@
+I"{<p>This tutorial will explain how to pacstrap the linux-lts kernel without having to install the package linux from an Arch Linux Live CD.  This is recommended for users seeking less frequent kernel updates, and the potential for increased stability.</p>
+
+<hr />
+
+<p><code>pacman -Sy</code></p>
+
+<p><code>pacstrap /mnt $(pacman -Sqg base | sed 's/^linux$/&amp;-lts/')</code></p>
+:ET

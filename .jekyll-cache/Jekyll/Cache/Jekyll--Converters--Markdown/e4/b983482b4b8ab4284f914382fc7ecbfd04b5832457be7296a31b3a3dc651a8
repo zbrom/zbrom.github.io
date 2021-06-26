@@ -1,5 +1,6 @@
-I"À<p>Here you will find some basic useful command line interface (CLI) commands for Arch Linux.  Commands should apply to all Arch builds assuming you are using systemd.  For additional flags, please view the man pages of any of the following applications.
-<strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><em>__</em></p>
+I"f<p>Here you will find some basic useful command line interface (CLI) commands for Arch Linux.  Commands should apply to all Arch builds assuming you are using systemd.  For additional flags, please view the man pages of any of the following applications.</p>
+
+<hr />
 
 <h4 id="package-management"><em>Package Management:</em></h4>
 
