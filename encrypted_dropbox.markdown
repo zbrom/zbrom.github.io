@@ -10,7 +10,7 @@ This tutorial will allow you to make an encrypted EncFS filesystem within your D
 
 ____________________________________
 
-Make sure you have a bin folder in your home directory; feel free to set an Environment Variable for it if desired:
+Make sure you have a bin folder in your home directory; feel free to set an [Environment Variable](/arch/env_variables){:target="_blank"} for it if desired:
 
 <code>mkdir ~/bin</code>
 
