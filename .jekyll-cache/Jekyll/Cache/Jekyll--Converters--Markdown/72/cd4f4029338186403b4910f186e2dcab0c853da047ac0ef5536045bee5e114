@@ -1,0 +1,174 @@
+I"� <p>So there are many reasons why you may want to encrypt your root partition and you must have one if you are looking here.</p>
+
+<p>There are a million different ways you could set up your partition scheme. I’m just going to show you one way here. I’m going to assume you have a decent amount of experience with Linux because encryption and Arch Linux are not for n00bs.</p>
+
+<hr />
+
+<div style="text-align: center;"><span style="background-color: #ff0000; color: #ffffff;">WARNING!<br />
+FOLLOWING THIS TUTORIAL COULD RESULT IN MASSIVE LOSE OF DATA. ALWAYS BACKUP FIRST.</span></div>
+
+<p>As stated above you should always backup up data. Data that you have on drives that you are about to encrypt will be completely destroyed.First you want to find the drive you want to install to so run.</p>
+
+<p>Code:</p>
+
+<p><code>fdisk -l</code></p>
+
+<p>This is the output on my system.</p>
+
+<p>Code:</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+Disk /dev/sda: 60.0 GB, 60022480896 bytes, 117231408 sectorsUnits = sectors of 1 * 512 = 512 bytesSector size (logical/physical): 512 bytes / 512 bytesI/O size (minimum/optimal): 512 bytes / 512 bytesDisk identifier: 0x0009bad8<br />
+   Device Boot      Start         End      Blocks   Id  System<br />
+/dev/sda1            2048      526335      262144   83  Linux<br />
+/dev/sda2          526336    42469375    20971520   83  Linux<br />
+/dev/sda3        42469376   117229567    37380096   83  Linux<br />
+<br />
+Disk /dev/sdb: 3000.6 GB, 3000592982016 bytes, 5860533168 sectors<br />
+Units = sectors of 1 * 512 = 512 bytes<br />
+Sector size (logical/physical): 512 bytes / 4096 bytes<br />
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes<br />
+<br />
+Disk /dev/mapper/root: 21.5 GB, 21472739328 bytes, 41938944 sectors<br />
+Units = sectors of 1 * 512 = 512 bytes<br />
+Sector size (logical/physical): 512 bytes / 512 bytes<br />
+I/O size (minimum/optimal): 512 bytes / 512 bytes<br />
+<br />
+Disk /dev/mapper/data: 3000.6 GB, 3000590884864 bytes, 5860529072 sectors<br />
+Units = sectors of 1 * 512 = 512 bytes<br />
+Sector size (logical/physical): 512 bytes / 4096 bytes<br />
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes<br />
+<br />
+Disk /dev/mapper/home: 38.3 GB, 38275121152 bytes, 74756096 sectors<br />
+Units = sectors of 1 * 512 = 512 bytes<br />
+Sector size (logical/physical): 512 bytes / 512 bytes<br />
+I/O size (minimum/optimal): 512 bytes / 512 bytes<br />
+<br />
+Disk /dev/mapper/datadrive-data: 3000.6 GB, 3000588304384 bytes, 5860524032 sectors<br />
+Units = sectors of 1 * 512 = 512 bytes<br />
+Sector size (logical/physical): 512 bytes / 4096 bytes<br />
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes<br />
+</div>
+</div>
+
+<p>Lets say the drive you want to install to is /dev/sda. You would want to write random data to this drive if it is a HDD. This will destroy all data.</p>
+
+<p>Code:</p>
+
+<p>dd if=/dev/urandom of=/dev/sda bs=512</p>
+
+<p>The block size should be equal to your physical sector size for greatest performance when running this command. Be patient because this could potentially take hours depending on processor performance, disk size, and disk write speeds.</p>
+
+<p>If you are using an SSD you will kill its performance by writing random data to it this way. Instead you should zero out the drive.</p>
+
+<div style="text-align: center;"><span style="background-color: #ff0000; color: #ffffff;">Note: This could potentially expose what type of filesytem that resides in the encrypted container to an attacker.</span></div>
+
+<p>Code:</p>
+
+<p>dd if=/dev/zero of=/dev/sda bs=512</p>
+
+<p>The next step is to partition the disk. There are many programs that you use to do this. I assume you know how so I won’t go into great detail here. Create two primary partitions on the drive. Make the first one 256 MB. The second one will take the rest of the drive up.</p>
+
+<p>You should now have two partitions on the drive. Format the 256 MB partition. This partition will be made for /boot.</p>
+
+<p>Code:</p>
+
+<p>mkfs.ext4 /dev/sda1</p>
+
+<p>Next I am going to show how to make an encrypted volume. Set a passphrase that is super secure. I recommend using a short password with a yubikey static password. You can get a yubikey <a href="https://www.yubico.com/" target="_blank">here</a>.</p>
+
+<p>Code:</p>
+
+<p>cryptsetup -y -s 512 -c aes-xts-plain luksFormat /dev/sda2</p>
+
+<p>For drives larger than 2 TB you should use aes-xts-plain64.</p>
+
+<p>Now that you have an encrypted volume you must open this volume and give it a device mapper name.</p>
+
+<p>Code:</p>
+
+<p>cryptsetup luksOpen /dev/sda2 encrypted</p>
+
+<p>If you want to be able to create more than one partition inside of your encrypted volume you will want to create an LVM. I will show how to create a partition for a 20GB root and the rest for /home. I will also show you how to format the new logical volumes.</p>
+
+<p>Code:
+pvcreate /dev/mapper/encrypted</p>
+
+<p>vgcreate vg_name /dev/mapper/encrypted</p>
+
+<p>lvcreate -n root -L 20G vg_name</p>
+
+<p>lvcreate -n home -l 100%FREE vg_name</p>
+
+<p>vgchange -ay
+mkfs.ext4 /dev/mapper/vg_name-root
+mkfs.ext4 /dev/mapper/vg_name-home</p>
+
+<p>From this point you would go about the Arch install, following the <a href="https://wiki.archlinux.org/title/Installation_guide" target="_blank">Arch Installation Guide</a>, with a few modifications that I will show. It is import that we tell the kernel where the root partition is and what parititon must be unlocked.</p>
+
+<p>Code:</p>
+
+<p>blkid /dev/sda2</p>
+
+<p>The output should be something like the following. I have highlighted the important part.</p>
+
+<p>Code:</p>
+
+<p><code>/dev/sda2: UUID="<span style="background-color: #ff9900;">99ed413f-a4d1-48e5-bdcb-63a5ed351787</span>" TYPE="crypto_LUKS"</code></p>
+
+<p>Next you need to modify the file /etc/default/grub. Change the line that says GRUB_CMDLINE_LINUX=”” to the following if you are using a HDD.</p>
+
+<p>Code:</p>
+
+<p>GRUB_CMDLINE_LINUX=”cryptdevice=/dev/disk/by-uuid/99ed413f-a4d1-48e5-bdcb-63a5ed351787:encrypted root=/dev/mapper/vg_name-root ro”</p>
+
+<p>Also make sure that the line GRUB_DISABLE_LINUX_UUID=true is commeted out.</p>
+
+<p>If you are using an SSD you need to change GRUB_CMDLINE_LINUX=”” to the following line in order for trim to work properly.</p>
+
+<p>Code:</p>
+
+<p>GRUB_CMDLINE_LINUX=”cryptdevice=/dev/disk/by-uuid/99ed413f-a4d1-48e5-bdcb-63a5ed351787:encrypted:allow-discards
+root=/dev/mapper/vg_name-root ro”</p>
+
+<p>Also make sure that the line GRUB_DISABLE_LINUX_UUID=true is commeted out.</p>
+
+<p>Next you need to modify your /etc/mkinitcpio.conf file. Change the HOOKS array to look like the following.</p>
+
+<p>Code:</p>
+
+<p>HOOKS=”base udev autodetect pata scsi sata encrypt lvm2 filesystems usbinput fsck”</p>
+
+<p>Then create an initramfs with the following command.</p>
+
+<p>Code:</p>
+
+<p>mkinitcpio -p linux</p>
+
+<p>Then generate your grub.cfg file with this command.</p>
+
+<p>Code:</p>
+
+<p>grub-mkconfig -o /boot/grub/grub.cfg</p>
+
+<p>Lastly make sure that your /etc/fstab is correct. It should look something like this if you have a HDD.</p>
+
+<p>Code:</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+# /etc/fstab: static file system information## <file system=""> <dir>   <type>  <options>       <dump>  <pass>tmpfs           /tmp    tmpfs   nodev,nosuid    0       0/dev/mapper/vg_name-root        /               ext4           <br /> rw,data=ordered 0 0<br />
+<br />
+# UUID=2bac00da-6283-45ab-8ba4-bed8d943218b<br />
+<br />
+/dev/mapper/vg_name-home        /home           ext4            rw,data=ordered 0 0<br />
+<br />
+# UUID=61386444-0a37-4453-82db-64c803306b7e /dev/sda1<br />
+<br />
+/dev/disk/by-uuid/61386444-0a37-4453-82db-64c803306b7e                  /boot           ext4            rw,data=ordered       0 0<br />
+
+&lt;/div&gt;
+&lt;/div&gt;
+</pass></dump></options></type></dir></file></div></div>
+:ET

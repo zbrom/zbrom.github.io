@@ -1,0 +1,283 @@
+I"]%<p>So there are many reasons why you may want to encrypt your root partition and you must have one if you are looking here.</p>
+
+<p>There are a million different ways you could set up your partition scheme. I’m just going to show you one way here. I’m going to assume you have a decent amount of experience with Linux because encryption and Arch Linux are not for n00bs.</p>
+
+<p>First, boot the Arch Linux Live CD off a UEFI Flash Drive.</p>
+
+<hr />
+
+<h5 id="preliminary">Preliminary:</h5>
+
+<p>Update repos:</p>
+
+<p><code>pacman -Syy</code></p>
+
+<p>OPTIONAL AMAZING STEP – Configure your system from a remote terminal:</p>
+
+<p><code>systemctl start sshd</code></p>
+
+<h5 id="preparing-your-drive">Preparing your Drive:</h5>
+
+<p>If installing to an SSD, make sure to <a href="https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase" target="_blank">Secure Erase</a> your drive; if installing to an HDD, make sure to write random data to your drive before proceeding.</p>
+
+<h5 id="create-gpt-partitions">Create GPT Partitions:</h5>
+
+<p><code>gdisk /dev/sda</code></p>
+
+<p>press o – to create a new empty GUID partition table (GPT)</p>
+
+<p>————–</p>
+
+<p>CREATE 1st PARTITION FOR BOOT:</p>
+
+<p>press n – to create new partition</p>
+
+<p>First Sector – just leave defaults so hit enter</p>
+
+<p>Last Sector – just put “256M” without quotes and hit enter, this makes a 256M partition</p>
+
+<p>Hex code: type “ef00” and hit enter – this is necessary for EFI</p>
+
+<p>It should now take you back to main menu</p>
+
+<p>OUTPUT SHOULD LOOK LIKE THIS FOR 1st PARTITION:</p>
+
+<p>Command (? for help): n</p>
+
+<p>Partition number (1-128, default 1):</p>
+
+<p>First sector (34-500118158, default = 2048) or {+-}size{KMGTP}:</p>
+
+<p>Last sector (2048-500118158, default = 500118158) or {+-}size{KMGTP}: 256M</p>
+
+<p>Current type is ‘Linux filesystem’</p>
+
+<p>Hex code or GUID (L to show codes, Enter = 8300): ef00</p>
+
+<p>Changed type of partition to ‘EFI System’</p>
+
+<p>————–</p>
+
+<p>CREATE 2nd PARTITION FOR ROOT/DATA:</p>
+
+<p>press n – to create new partition</p>
+
+<p>First Sector – just leave defaults so hit enter</p>
+
+<p>Last Sector – just leave default so hit enter – this will select the remaining space for data</p>
+
+<p>Hex code: type “8300” and hit enter (or just hit enter as 8300 is the default) – this is for data</p>
+
+<p>OUTPUT SHOULD LOOK LIKE THIS FOR 3rd PARTITION:</p>
+
+<p>Partition number (2-128, default 2):</p>
+
+<p>First sector (34-500118158, default = 16779264) or {+-}size{KMGTP}:</p>
+
+<p>Last sector (16779264-500118158, default = 500118158) or {+-}size{KMGTP}:</p>
+
+<p>Current type is ‘Linux filesystem’</p>
+
+<p>Hex code or GUID (L to show codes, Enter = 8300):</p>
+
+<p>Changed type of partition to ‘Linux filesystem’</p>
+
+<p>————–</p>
+
+<p>CONFIRM</p>
+
+<p>Confirm you have 2 partitions with about the same settings as this (if your swap or data are different sizes that’s cool)</p>
+
+<p>After creating the 2nd partition it should of brought you to main menu, at the main menu press “p” to see the current pending partition table (its not written to disk just yet)</p>
+
+<p>OUTPUT SHOULD LOOK LIKE THIS:</p>
+
+<p>Command (? for help): p</p>
+
+<p>Disk /dev/sda: 500118192 sectors, 238.5 GiB</p>
+
+<p>Logical sector size: 512 bytes</p>
+
+<p>Disk identifier (GUID): 8E8C0F70-22D8-4FE6-A5AB-E20A0483C2F5</p>
+
+<p>Partition table holds up to 128 entries</p>
+
+<p>First usable sector is 34, last usable sector is 500118158</p>
+
+<p>Partitions will be aligned on 2048-sector boundaries</p>
+
+<p>Total free space is 6108 sectors (3.0 MiB)</p>
+
+<p>Number Start (sector) End (sector) Size Code Name</p>
+
+<p>1 2048 614400 256.0 MiB EF00 EFI System</p>
+
+<p>3 616448 500118158 230.5 GiB 8300 Linux filesystem</p>
+
+<p>SAVE</p>
+
+<p>Save everything after confirmation</p>
+
+<p>Press w to write to disk</p>
+
+<p>Press Y to confirm</p>
+
+<p>————–</p>
+
+<p>Make the FAT 32 system for EFI boot:</p>
+
+<p><code>mkfs.vfat -F32 /dev/sda1</code></p>
+
+<p>————–</p>
+<h5 id="setting-up-the-encrypted-filesystem">Setting up the Encrypted Filesystem:</h5>
+
+<p>Next I am going to show how to make an encrypted volume. Set a passphrase that is super secure. I recommend using a short password with a yubikey static password. You can get a yubikey here.</p>
+
+<p>Code:</p>
+
+<p><code>cryptsetup -y -s 512 -c aes-xts-plain64 luksFormat /dev/sda2</code></p>
+
+<p>Now that you have an encrypted volume you must open this volume and give it a device mapper name.</p>
+
+<p>Code:</p>
+
+<p><code>cryptsetup luksOpen /dev/sda2 encrypted</code></p>
+
+<p>Now we will format /dev/mapper/encrypted to btrfs:</p>
+
+<p><code>mkfs.btrfs /dev/mapper/encrypted</code></p>
+
+<p>————–</p>
+<h5 id="subvolume-configuration">Subvolume Configuration:</h5>
+
+<p>We will now make our ROOT subvolume, this will be a folder called ROOT located at the root of /dev/mapper/encrypted. The way we will design this is that when the system boots we will not see /ROOT, we will be inside ROOT. Inside ROOT you will have all of your etc, sys, proc, etc.</p>
+
+<p><code>mount /dev/mapper/encrypted /mnt</code></p>
+
+<p><code>cd /mnt</code></p>
+
+<p><code>btrfs subvolume create /mnt/ROOT</code></p>
+
+<p>This should show you your ROOT</p>
+
+<p><code>btrfs subvolume list -a /mnt</code></p>
+
+<p>Something like this: ID 256 gen 5 top level 5 path ROOT</p>
+
+<p><code>cd /</code></p>
+
+<p><code>umount /dev/mapper/encrypted</code></p>
+
+<p>Now we will mount the ROOT subvolume as /mnt and we will dump the arch system into there with pacman. We will also enable compress to utilize btrfs compress feature.</p>
+
+<p><code>mount -o defaults,compress,subvol=ROOT /dev/mapper/encrypted /mnt</code></p>
+
+<p><code>cd /mnt</code></p>
+
+<p><code>mkdir /mnt/boot</code></p>
+
+<p><code>mount /dev/sda1 /mnt/boot</code></p>
+
+<h5 id="install-the-base-system">Install the Base System:</h5>
+
+<p>Pacstrap the Arch Linux base:</p>
+
+<p><code>pacstrap -i /mnt base base-devel</code></p>
+
+<p>Note it might ask confirmation steps requiring either to press “enter” to accept all selections or Y and enter. Just select whichever option downloads everything.</p>
+
+<p><code>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</code></p>
+
+<p>————–</p>
+
+<p>By default fstab for vfat thats generated by genfstab picks a value that makes the filesystem check too often for vfat, in fact we need to change it to never doing a filesystem check because vfat (or else it will complain later, so in there we change the value from 2 to 0, meaning never doing filesystem check)</p>
+
+<p><code>nano /mnt/etc/fstab</code></p>
+
+<p>Change this:</p>
+
+<p><code># /dev/sda1</code></p>
+
+<p><code>UUID=C218-8694 /boot vfat rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 2</code></p>
+
+<p>To this:</p>
+
+<p><code># /dev/sda1</code></p>
+
+<p><code>UUID=C218-8694 /boot vfat rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0</code></p>
+
+<p>————–</p>
+
+<p>Finally make sure in that fstab file you see: “defaults,compress,subvol=ROOT” on /mnt.</p>
+
+<p>Lets chroot into the /mnt folder:</p>
+
+<p>arch-chroot /mnt</p>
+
+<p>From this point you would go about the Arch install the same way you would using the wiki found here. With a few modifications that I will show. It is import that we tell the kernel where the root partition is and what parititon must be unlocked.</p>
+
+<p>Code:</p>
+
+<p>blkid /dev/sda2</p>
+
+<p>The output should be something like the following.</p>
+
+<p>Code:</p>
+
+<p>/dev/sda2: UUID=”99ed413f-a4d1-48e5-bdcb-63a5ed351787” TYPE=”crypto_LUKS”</p>
+
+<p>Next you need to modify the file /etc/default/grub. Change the line that says GRUB_CMDLINE_LINUX=”” to the following; if you are using an SSD, allow-discards is necessary for trim to work properly.</p>
+
+<p>Code:</p>
+
+<p>GRUB_CMDLINE_LINUX=”rootflags=subvol=ROOT cryptdevice=/dev/disk/by-uuid/99ed413f-a4d1-48e5-bdcb-63a5ed351787:encrypted:allow-discards root=/dev/mapper/encrypted”</p>
+
+<p>Also make sure that the line GRUB_DISABLE_LINUX_UUID=true is commeted out.</p>
+
+<p>Next you need to modify your /etc/mkinitcpio.conf file. Change the HOOKS array to look like the following.</p>
+
+<p>Code:</p>
+
+<p>HOOKS=”base udev autodetect encrypt modconf block filesystems keyboard btrfs”</p>
+
+<p>Then create an initramfs with the following command.</p>
+
+<p>Code:</p>
+
+<p>mkinitcpio -p linux</p>
+
+<p>Setting up the EFI Bootloader with GRUB 2:</p>
+
+<p>Grub exists for BIOS mbr and gpt boots, but also for EFI. Efi supports many more bootloaders, infact it supports no bootloader (and it will load your OS) that’s called EFISTUB.</p>
+
+<p>mount -t efivarfs efivarfs /sys/firmware/efi/efivars</p>
+
+<p>pacman -S grub efibootmgr</p>
+
+<p>grub-install –target=x86_64-efi –efi-directory=/boot –bootloader-id=Arch_GRUB –recheck</p>
+
+<p>grub-mkconfig -o /boot/grub/grub.cfg</p>
+
+<p>We are hoping for output like this from the grub-install command:</p>
+
+<p>Installation finished. No error reported.</p>
+
+<p>Exit from the chroot environment:</p>
+
+<p>exit</p>
+
+<p>Since the partitions are mounted under /mnt, we use the following command to unmount them:</p>
+
+<p>We mounted a few things into mnt, lets unmount all of them recursively:</p>
+
+<p>umount -R /mnt</p>
+
+<p>Lets reboot, in my case it comes right up 🙂</p>
+
+<p>reboot
+References:</p>
+
+<p>http://www.kossboss.com/linux—arch-installation-with-btrfs-root-and-efi-grub-boot</p>
+
+<p>https://wiki.archlinux.org/index.php/Installation_guide</p>
+:ET

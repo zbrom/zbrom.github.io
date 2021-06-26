@@ -1,0 +1,19 @@
+I"�<p>So there are many reasons why you may want to encrypt your root partition and you must have one if you are looking here.</p>
+
+<p>There are a million different ways you could set up your partition scheme. I’m just going to show you one way here. I’m going to assume you have a decent amount of experience with Linux because encryption and Arch Linux are not for n00bs.</p>
+
+<hr />
+
+<div style="text-align: center;"><span style="background-color: #ff0000; color: #ffffff;">WARNING!<br />
+FOLLOWING THIS TUTORIAL COULD RESULT IN MASSIVE LOSE OF DATA. ALWAYS BACKUP FIRST.</span></div>
+
+<p>As stated above you should always backup up data. Data that you have on drives that you are about to encrypt will be completely destroyed.First you want to find the drive you want to install to so run.</p>
+
+<p>Code:</p>
+
+<p><code>fdisk -l</code></p>
+
+<p>This is the output on my system.</p>
+
+<p>Code:</p>
+:ET
