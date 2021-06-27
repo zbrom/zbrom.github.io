@@ -1,7 +1,7 @@
 ---
 layout: page
 background: '/img/ghorr_banner.png'
-title: Encrypted BTRFS Root with EFI
+title: Encrypted BTRFS Root w/ EFI
 date: 2021-06-25
 categories : dropdown
 permalink: /arch/encrypted_btrfs/

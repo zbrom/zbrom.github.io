@@ -1,0 +1,36 @@
+I"w<p>This tutorial explains how to add Windows to GRUB if you are dual booting.  This tutorial accounts for whether you are on an UEFI system or BIOS system.</p>
+
+<hr />
+<p></p>
+<h4 id="bios-systems">BIOS Systems:</h4>
+
+<p>First edit the grub.cfg file, and modify (hd1,1) according to your drive and partition number.</p>
+
+<p><code>nano /boot/grub/grub.cfg</code></p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code>#Windows</code><br />
+<code>menuentry "Windows" {</code><br />
+<code>set root=(hd1,1)</code><br />
+<code>chainloader +1</code><br />
+<code>}</code><br />
+</div>
+</div>
+
+<h4 id="uefi-systems">UEFI Systems:</h4>
+
+<p>Determine the UUID for your EFI boot partition on your drive.  Replace /dev/sdb3 with your EFI partition number.</p>
+
+<p>blkid /dev/sdb3</p>
+
+<p>Edit the grub.cfg file, and enter your UUID for the EFI partition from above.</p>
+
+<p>nano /boot/grub/grub.cfg</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+
+</div>
+</div>
+:ET

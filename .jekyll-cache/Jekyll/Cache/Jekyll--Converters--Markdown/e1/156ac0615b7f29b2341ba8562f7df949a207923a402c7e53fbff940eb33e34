@@ -1,0 +1,50 @@
+I"�<p>Recently while preparing a persistent USB Linux OS, I found difficulty in removing an encrypted swap and shrinking the size of the encrypted LVM.  This guide should provide some clarification.</p>
+
+<hr />
+<p></p>
+<h4 id="remove-swap">Remove Swap</h4>
+
+<p>If you previously had a swap partition, ensure it is turned off</p>
+
+<p><code>sudo swapoff -a</code></p>
+
+<p>Remove your particular cryptswap partition.</p>
+
+<p><code>sudo cryptsetup remove /dev/mapper/cryptswap1</code></p>
+
+<p>Remove your logical volume.</p>
+
+<p><code>lvremove /dev/VolGroup00/LogVol01</code></p>
+
+<h4 id="resize-volumes">Resize Volumes</h4>
+
+<p>Display the size of your logical volume(s)</p>
+
+<p><code>lvdisplay | grep Size</code></p>
+
+<p>If desired, feel free to resize a logical volume (choose your desired size e.g. 50G)</p>
+
+<p><code>lvresize /dev/VolGroup/LogVol00 --size 50G</code></p>
+
+<p>Resize your physical volume to match the logical volume (choose your desired size e.g. 50G)</p>
+
+<p><code>pvresize /dev/sda2 --setphysicalvolumesize 50G</code></p>
+
+<h4 id="display-volume-sizes">Display Volume Sizes</h4>
+
+<p>Display the size of your logical volume(s)</p>
+
+<p><code>lvdisplay | grep Size</code></p>
+
+<p>Display the PV sizes in SECTORS and take note of the smaller PSize:</p>
+
+<p><code>lvm pvs --units s</code></p>
+
+<p>Display the partition Size in SECTORS using parted and take note of the Start sector and partition Number of the partition with “lvm” in the Flags column (I recommend you save the full output of the following command):</p>
+
+<p><code>parted /dev/sda unit s print</code></p>
+
+<div style="text-align: center;">
+<p><strong><span style="background-color: #ff0000; color: #ffffff;">POINT OF NO RETURN – HAVE BACKUPS</span></strong></p>
+</div>
+:ET

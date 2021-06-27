@@ -6,7 +6,7 @@ date: 2021-06-25
 #categories : dropdown
 permalink: /degoogle/
 ---
-
+<p></p>
 #### Introduction:
 
 This section of the site will contain recommendations on how to eliminate Google services from your life. Expect new content to follow. ghorr currently recommends running LineageOS without gapps installed. Check out this introductory video to DeGoogled phones by Rob Braxman.

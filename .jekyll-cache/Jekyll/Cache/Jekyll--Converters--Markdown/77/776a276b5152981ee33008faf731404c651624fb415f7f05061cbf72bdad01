@@ -1,0 +1,12 @@
+I"‹<p>This tutorial explains how to add Windows to GRUB if you are dual booting.  This tutorial accounts for whether you are on an UEFI system or BIOS system.</p>
+
+<hr />
+<p></p>
+<h4 id="bios-systems">BIOS Systems:</h4>
+
+<p>First edit the grub.cfg file, and modify (hd1,1) according to your drive and partition number.</p>
+
+<p>nano /boot/grub/grub.cfg</p>
+
+<h4 id="uefi-systems">UEFI Systems:</h4>
+:ET
