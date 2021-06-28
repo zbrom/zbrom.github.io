@@ -51,4 +51,4 @@ Edit the grub.cfg file, and enter your UUID for the EFI partition from above.
 </div>
 </div>
 
-This technique may also be used to add LiveCD entries to your GRUB menu with the following tutorial [here](http://ghorr.org/?page_id=650){:target="_blank"}.
+This technique may also be used to add LiveCD entries to your GRUB menu with the following tutorial [here](../../misc/livecd_grub){:target="_blank"}.

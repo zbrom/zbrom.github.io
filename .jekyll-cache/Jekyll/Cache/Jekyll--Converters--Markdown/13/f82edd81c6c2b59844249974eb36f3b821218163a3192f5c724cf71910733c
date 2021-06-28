@@ -1,0 +1,9 @@
+I"Ó<p>This tutorial explains how to add a LiveCD as an entry for your GRUB menu. This is especially useful for backing up your boot drive, or when you may need to troubleshoot an installation. I have provided an example using Ubuntu LTS; these entries should be similar for other Debian based distributions.</p>
+
+<hr />
+
+<p>First edit the grub.cfg file, and modify (hd1,2) according to your drive and partition number.</p>
+
+<p><code>nano /boot/grub/grub.cfg</code></p>
+
+:ET
