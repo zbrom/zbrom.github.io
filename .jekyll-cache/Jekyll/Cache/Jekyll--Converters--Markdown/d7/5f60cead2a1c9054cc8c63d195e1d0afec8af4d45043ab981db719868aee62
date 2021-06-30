@@ -1,0 +1,297 @@
+I"D)<p>The ghorr staff completed a successful Gentoo installation on 10 August 2013 utilizing the following guide.  For further reference, check out the official <a href="https://wiki.gentoo.org/wiki/Handbook:AMD64/Full/Installation" target="_blank">Gentoo documentation</a>.</p>
+
+<hr />
+
+<p><img src="../../img/linux/gblend-150x150.png" alt="" style="float: left;margin-right: 7px;margin-top: 7px;" /></p>
+
+<h4 id="gentoo-installation">Gentoo Installation</h4>
+
+<p></p>
+<h5 id="prior-to-installation"><em>Prior to installation</em></h5>
+
+<p>Go to <a href="https://www.gentoo.org/downloads" target="_blank">https://www.gentoo.org/downloads</a> and download the latest install-amd64-minimal iso</p>
+
+<p>Prepare a bootable drive for the ISO (use dd command, UNetbootin, or drivedroid for Android)</p>
+
+<p>Boot the device</p>
+
+<p>Select your keyboard layout (41 for US)</p>
+
+<h5 id="beginning-the-installation"><em>Beginning the installation</em></h5>
+
+<p>Check for a working network connection (e.g. ping google.com)</p>
+
+<p>If you have no working network connection, try using the net-setup command to start the desired network interface</p>
+
+<p><code>net-setup eth0</code></p>
+
+<h5 id="disk-partitioning"><em>Disk partitioning</em></h5>
+
+<p>Determine your desired installation device using the fdisk command (e.g. /dev/sda)</p>
+
+<p><code>fdisk -l</code></p>
+
+<p>You may use cfdisk or fdisk to partition your drives; whatever your are more comfortable with is applicable. I chose to partition using cfdisk.</p>
+
+<p><code>cfdisk /dev/sda</code></p>
+
+<p>Create the desired number of partitions for your drive. If you wish to do encryption, ensure you have a separate boot and root partition.</p>
+
+<p>Create filesystems for all of the partitions you just created. e.g.</p>
+
+<p><code>mkfs.ext4 /dev/sda1</code></p>
+
+<p>If you feel you need a swap, ensure you added a swap partition using cfdisk. After adding the swap partition, use the mkswap command to properly initialize the swap. e.g.</p>
+
+<p><code>mkswap /dev/sda2</code></p>
+
+<p>Start the swap</p>
+
+<p><code>swapon /dev/sda2</code></p>
+
+<p>Now we must begin mounting our partitions for the installation (first mount your root partition; then mount any other partitions you may have created).</p>
+
+<p><code>mount /dev/sda1 /mnt/gentoo</code></p>
+
+<p>Ensure it has a proper filesystem structrure; you should see a lost+found folder</p>
+
+<p><code>ls /mnt/gentoo</code></p>
+
+<p>If needed create directories for any additional partitions to be mounted using the mkdir command; then mount those partitions using the mount command as previously mentioned.</p>
+
+<h5 id="configure-date--download-tarball"><em>Configure Date / Download tarball</em></h5>
+
+<p>Before we start the installation, ensure the system date is set properly using the date command. UTC time is desired.</p>
+
+<p><code>date</code></p>
+
+<p>If the date were not correct, you can issue the following command to set it to a given time and date (e.g. 10 August 2013 at 21:00 would be entered as below).</p>
+
+<p><code>date 81721002013</code></p>
+
+<p>Change directory to the root partition that you just mounted</p>
+
+<p><code>cd /mnt/gentoo</code></p>
+
+<p>We will be using the Links CLI browser to download the stage 3 tarball</p>
+
+<p><code>links http://gentoo.org/main/en/mirrors.xml</code></p>
+
+<p>Select a nearby mirror (e.g. Argonne National Laboratory). Click the mirror → Click releases → Click amd64 → Click current-stage3 → Click default → Click the most current date → Select the latest stage3-amd64 tar.bz2 file to download</p>
+
+<p>Exit Links with q</p>
+
+<h5 id="extract--configure-flags"><em>Extract / Configure Flags</em></h5>
+
+<p>Extract the downloaded package to your root partition (e.g. /mnt/gentoo)</p>
+
+<p><code>tar -xjpf stage3-amd64*</code></p>
+
+<p>Now we need to install the portage package manager</p>
+
+<p><code>links http://gentoo.org/main/en/mirrors.xml</code></p>
+
+<p>Select a nearby mirror (e.g. Argonne National Laboratory). Click the mirror → Click snapshots → Click amd64 → Scroll down and select the file portage-latest.tar.bz2 to download</p>
+
+<p>Extract the downloaded package to your root partition (e.g. /mnt/gentoo), and copy it to the usr/ directory</p>
+
+<p><code>tar -xvjf portage-latest.tar.bz2 -C usr/</code></p>
+
+<p>Once portage is done unpacking, the next step is to set the gcc compiler flags</p>
+
+<p><code>nano /etc/portage/make.conf</code></p>
+
+<p>Visit the gentoo gcc optimization guide for more information. In this example we will use the -march=native option for CFLAGS</p>
+
+<p><code>CFLAGS="-march=native -02 -pipe"</code></p>
+
+<p>Set MAKEOPTS to one more that the number of processing cores you have (e.g. for a dual core processor)</p>
+
+<p><code>MAKEOPTS="-j3"</code></p>
+
+<h5 id="chroot"><em>Chroot</em></h5>
+
+<p>It is almost time to chroot into the new gentoo environment, but we first need to copy the DNS information over.</p>
+
+<p><code>cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf</code></p>
+
+<p>Now we need to mount some of the necessary filesystems</p>
+
+<p><code>mount -t proc none /mnt/gentoo/proc</code></p>
+
+<p><code>mount -rbind /sys /mnt/gentoo/sys</code></p>
+
+<p><code>mount -rbind /dev /mnt/gentoo/dev</code></p>
+
+<p>Now we can chroot into the new environment</p>
+
+<p><code>chroot . /bin/bash</code></p>
+
+<p>Run the following command:</p>
+
+<p><code>env-update</code></p>
+
+<p>Run the following command:</p>
+
+<p><code>source /etc/profile</code></p>
+
+<p>Update the PS1 so you can identify that you are in the chrooted environment</p>
+
+<p><code>export PS1=“(chroot) $PS1”</code></p>
+
+<p>Update the portage tree using the following command</p>
+
+<p><code>emerge --sync</code></p>
+
+<h5 id="profile--timezone"><em>Profile / Timezone</em></h5>
+
+<p>Select the profile; the building block for a gentoo system. It has values for the USE and CFLAGS variables. You will use the following command to view all the available profiles.</p>
+
+<p><code>eselect profile list</code></p>
+
+<p>Pick your desired environment (e.g. gnome users would select 4)</p>
+
+<p><code>eselect profile set 4</code></p>
+
+<p>Make sure the desired profile was properly set</p>
+
+<p><code>eselect profile list</code></p>
+
+<p>Now lets set the USE variable in the make.conf file</p>
+
+<p><code>nano /etc/portage/make.conf</code></p>
+
+<p>For a gnome setup, set the USE variable as follows (for a full listing of the available USE flags please see the gentoo handbook here.</p>
+
+<p><code>USE=“$USE alsa dvd gnome gtk pulseaudio -kde”</code></p>
+
+<p>Now we will set the timezone; determine your desired timezone</p>
+
+<p><code>ls /usr/share/zoneinfo</code></p>
+
+<p>Copy the desired timezone file (e.g. US Central) to /etc/localtime</p>
+
+<p><code>cp /usr/share/zoneinfo/US/Central /etc/localtime</code></p>
+
+<p>Echo whatever file you selected into the /etc/timezone file</p>
+
+<p><code>echo “US/Central” &gt; /etc/timezone</code></p>
+
+<h5 id="kernel"><em>Kernel</em></h5>
+
+<p>Now we need to download the kernel source code</p>
+
+<p><code>emerge gentoo-sources</code></p>
+
+<p>Next you have a couple of options to choose from, one is configuring the kernel manually, another option which is much easier and simpler is to simply emerge genkernel. I will be utilizing the later option due to time constraints.</p>
+
+<p><code>emerge genkernel</code></p>
+
+<p>Once genkernel is done installing, run the following command to compile the sources for your system.</p>
+
+<p><code>genkernel all</code></p>
+
+<p>The generated files will be in /boot after genkernel finishes compiling. You will have a kernel file and an initrd</p>
+
+<p><code>ls /boot/kernel*</code></p>
+
+<p><code>ls /boot/initramfs*</code></p>
+
+<p>Now we need to configure the kernel modules. For this we will use the find command.  This command will need to be changed corresponding to the version of gentoo downloaded.</p>
+
+<p><code>find /lib/modules/3.5.7-gentoo/ -type f -iname '*.o' -or -iname '*.ko' | less</code></p>
+
+<p>Keep note of the ones you will need for the next step 😀</p>
+
+<p>Edit the following file
+<code>nano /etc/conf.d/modules</code></p>
+
+<p>Uncomment the line modules, and replace ohci1394 with whatever kernel modules you will need (e.g. iwlwifi).</p>
+
+<p>The kernel is now configured!</p>
+
+<h5 id="fstab"><em>Fstab</em></h5>
+
+<p>Create your fstab</p>
+
+<p><code>nano -w /etc/fstab</code></p>
+
+<p>Add all of the partitions you created during partitioning to the fstab (e.g. the root partition sould look like this).</p>
+
+<p><code>/dev/sda1 / ext4 noatime 0 1</code></p>
+
+<h5 id="network"><em>Network</em></h5>
+
+<p>Add a hostname for your network. e.g.</p>
+
+<p><code>nano /etc/conf.d/hostname</code></p>
+
+<p><code>hostname=“ghorr”</code></p>
+
+<p>We also need to edit the host file
+nano /etc/hosts</p>
+
+<p>On the line containing your local loopback, put the hostname you just set before localhost. e.g.
+127.0.0.1 ghorr localhost</p>
+
+<p>Edit the net file
+nano /etc/conf.d/net</p>
+
+<p>You need to enter the following
+config_eth0=“dhcp”</p>
+
+<p>In order to activate the network at boot, we will need to create an init script for it.</p>
+
+<p>Change directory to the following:
+cd /etc/init.d</p>
+
+<p>Create the following sym link for eth0
+ln -s net.lo net.eth0</p>
+
+<p>The sym link has now been created; next we must add it to the default run level
+rc-update add net.eth0 default</p>
+
+<p>In order for gentoo to automatically obtain an IP address, we need to install dhcpcd
+emerge dhcpcd</p>
+
+<p>Root Password / locale</p>
+
+<p>Set the root password; issue the following command, then enter your desired password.
+passwd</p>
+
+<p>Modify the hwclock file to how your hardware clock is set. Leave it as is for UTC.
+nano -w /etc/conf.d/hwclock</p>
+
+<p>Modify the local.gen file for the languages you will be using (e.g. uncomment en_US.UTF-8 UTF-8)</p>
+
+<p>Set the default language
+nano -w /etc/env.d/02locale</p>
+
+<p>Enter the following e.g.
+LANG=“en_US.UTF-8”
+LC_COLLATE=“C”</p>
+
+<p>Generate your locales that were selected
+locale-gen</p>
+
+<p>Now do an environment update
+env-update &amp;&amp; source /etc/profile</p>
+
+<p>Reset your chroot indicator
+export PS1=“(chroot) $PS1”</p>
+
+<p>Grub</p>
+
+<p>Configure your grub bootloader
+emerge grub</p>
+
+<p>Now we have to configure the grub menu entries
+nano -w /boot/grub/grub.conf</p>
+
+<p>We need to know the location of the kernel file and the initramfs file</p>
+
+<p>ls /boot/<em>genkernel-x86</em> » /boot/grub/grub.conf
+nano -w /boot/grub/grub.conf</p>
+
+<p>Configure the grub entry for your particular drive, feel free to include a rescue kernel if desired. Here is an example:</p>
+:ET
