@@ -3,7 +3,7 @@ email:              admin@ghorr.org
 description:        Your source for GNU/Linux, Security, and Open Source
 author:             zbrom
 baseurl:            "/"
-url:                "https://zbrom.github.io"
+url:                "https://ghorr.org"
 
 # Social Profiles
 twitter_username:   zbrom
