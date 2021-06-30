@@ -1,0 +1,9 @@
+I"s<h4 id="create-encrypted-files-and-folders-in-ubuntu">Create Encrypted Files and Folders in Ubuntu</h4>
+
+<p>Seahorse is a front-end for GnuPG (Gnu Guard Program), a tool for secure communication and data storage. With Seahorse extension for Nautilus, you could encrypt a file or folder by right-clicking it and selecting ‘Encrypt’ on nautilus context menu. Files and folders that are encrypted cannot be accessed without the passwords used to encrypt them. It is a another way to protect your sensitive information.</p>
+
+<h5 id="getting-started">Getting started:</h5>
+
+<p>To get started, go to Ubuntu Software Center.</p>
+
+:ET

@@ -1,0 +1,25 @@
+I"p<p>Magic SysRq key is a key combination which directly provides instructions to the Linux kernel.  Itllows the user to perform various low-level commands regardless of the system’s state.  It may be used to recover from freezes, allowing the user to reboot a computer without corrupting the filesystem.</p>
+
+<hr />
+
+<h5 id="sysrq-key-location">SysRq Key Location</h5>
+
+<p><img src="../../img/misc/KeyboardWithPrintScreen.png" alt="" /></p>
+
+<p></p>
+
+<table cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<th style="border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: #ffffff -moz-use-text-color #ffffff #ffffff; padding: 0.02in 0in 0.02in 0.02in; width: 807.083px; height: 37.1667px;"><span style="font-size: small;">Action</span></th>
+<th style="border: 1px solid #ffffff; padding: 0.02in; width: 115.167px; height: 37.1667px;"><span style="font-size: small;"><a href="http://en.wikipedia.org/wiki/QWERTY">QWERTY</a></span></th>
+</tr>
+<tr>
+<td style="border-width: medium medium 1px 1px; border-style: none none solid solid; border-color: -moz-use-text-color -moz-use-text-color #ffffff #ffffff; padding: 0in 0in 0.02in 0.02in; width: 807.083px; height: 58.0833px;"><span style="font-size: small;">Set the console log level, which controls the types of kernel<br />
+messages that are output to the console</span></td>
+<td style="border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color #ffffff #ffffff; padding: 0in 0.02in 0.02in; width: 115.167px; height: 58.0833px;"><span style="font-size: small;"><b>0</b> through <b>9</b></span></td>
+</tr>
+<tr>
+
+</tr></tbody></table>
+:ET

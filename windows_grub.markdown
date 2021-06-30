@@ -4,7 +4,7 @@ background: '/img/ghorr_banner.png'
 title: Windows Entry for GRUB
 date: 2021-06-27
 categories : dropdown
-permalink: /linux/windows_grub/
+permalink: /misc/windows_grub/
 ---
 
 This tutorial explains how to add Windows to GRUB if you are dual booting.  This tutorial accounts for whether you are on an UEFI system or BIOS system.

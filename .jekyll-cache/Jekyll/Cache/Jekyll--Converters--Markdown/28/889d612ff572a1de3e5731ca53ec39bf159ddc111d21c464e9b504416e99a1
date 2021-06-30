@@ -1,0 +1,28 @@
+I"s<p>Magic SysRq key is a key combination which directly provides instructions to the Linux kernel.  Itllows the user to perform various low-level commands regardless of the system’s state.  It may be used to recover from freezes, allowing the user to reboot a computer without corrupting the filesystem.</p>
+
+<hr />
+
+<h5 id="sysrq-key-location">SysRq Key Location</h5>
+
+<p><img src="../../img/misc/KeyboardWithPrintScreen.png" alt="" /></p>
+
+<p>Launch powershell as administrator from the start menu and run the following command (replace 0 with your Disk number):</p>
+
+<p><code>mbr2gpt /convert /disk:0 /allowfullOS</code></p>
+
+<p><img src="../../img/misc/windows_mbr_gpt_02.png" alt="" /></p>
+
+<p>This will convert the drive to GPT and make an EFI partition on the drive as well.</p>
+
+<p>From a PE environment, you can use the following command:</p>
+
+<p><code>mbr2gpt /convert /disk:0</code></p>
+
+<p>If you need to add your Windows 10 EFI Boot Manager to Grub, check out this <a href="../windows_grub" target="_blank">page</a>.</p>
+
+<h4 id="references">References:</h4>
+
+<p><a href="https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt" target="_blank">https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt</a></p>
+
+<p><a href="https://www.partitionwizard.com/partitionmagic/mbr2gpt.html" target="_blank">https://www.partitionwizard.com/partitionmagic/mbr2gpt.html</a></p>
+:ET
