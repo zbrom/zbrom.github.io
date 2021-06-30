@@ -14,14 +14,13 @@
         <li class="nav-item" id="site-category">
           <a class="nav-link" href="/arch">Arch</a>
           <ul>        
-  {% include arch.html %}
+{% include arch.html %}
         </ul>
         </li>   
         <li class="nav-item" id="site-category">
           <a class="nav-link" href="/bios">Bios</a>
           <ul>
-            <li><a href="/bios/ferb">ferb</a></li>
-            <li><a href="/bios/zbrom">zbrom</a></li>                                                   
+{% include bios.html %}                                                   
         </ul>
         </li>              
         <li class="nav-item">
@@ -30,8 +29,7 @@
         <li class="nav-item" id="site-category">
           <a class="nav-link" href="/code">Code</a>
           <ul>
-            <li><a href="/code/multi_video">Multi-Monitor Video Script</a></li>
-            <li><a href="/code/ssh_download">SSH Download Script</a></li>                                                   
+{% include code.html %}                                                             
         </ul>
         </li>
         <li class="nav-item">
@@ -40,28 +38,13 @@
         <li class="nav-item" id="site-category">
           <a class="nav-link" href="/linux">Linux</a>
           <ul>
-            <li><a href="/linux/backup_dd">Backup with dd Command</a></li>
-            <li><a href="/linux/disable_journal">Disable Journaling</a></li> 
-            <li><a href="/linux/gentoo_install">Gentoo Installation</a></li>              
-            <li><a href="/linux/gnome">GNOME Config</a></li>               
-            <li><a href="/linux/grub_livecd">GRUB 2 USB LiveCD Multiboot</a></li> 
-            <li><a href="/linux/shrink_enc_lvm">Shrink an Encrypted LVM</a></li>   
-            <li><a href="/linux/tmux">Tmux Commands</a></li>                                                                                              
+{% include linux.html %}                                                                                                                                                  
         </ul>
         </li>      
         <li class="nav-item" id="site-category">
           <a class="nav-link" href="/misc">Misc</a>
           <ul>
-            <li><a href="/misc/livecd_grub">Add a LiveCD to GRUB</a></li>   
-            <li><a href="/misc/ubuntu_gpg">GPG Encryption in Ubuntu</a></li>  
-            <li><a href="/misc/hp_printer">HP Printer Rules</a></li>                      
-            <li><a href="/misc/irc">IRC</a></li>  
-            <li><a href="/misc/laptop_brightness">Laptop Brightness Fix</a></li>                        
-            <li><a href="/misc/magic_sysrq">Magic SysRq Key</a></li>   
-            <li><a href="/misc/windows_kmenu">Map Windows Key to KMenu</a></li>            
-            <li><a href="/misc/random_girl">Random Girl</a></li>                                  
-            <li><a href="/misc/windows_mbr_gpt">Windows 10 MBR to GPT</a></li>      
-            <li><a href="/misc/windows_grub">Windows Entry for GRUB</a></li>                                                                                                             
+{% include misc.html %}                                                                                                            
         </ul>
         </li>                           
         <li class="nav-item">
@@ -70,9 +53,7 @@
         <li class="nav-item" id="site-category">
           <a class="nav-link" href="/security">Security</a>
           <ul>
-            <li><a href="/security/luks_encryption">LUKS Drive Encryption</a></li>
-            <li><a href="/security/prism-break">Prism-break</a></li>
-            <li><a href="/security/secure_email">Secure Email Services</a></li>            
+{% include security.html %}            
         </ul>
         </li> 
         <li class="nav-item">

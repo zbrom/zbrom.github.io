@@ -10,3 +10,8 @@ permalink: /security/
 Here you will find information on how to remain secure with your digital information.
 
 ![](../img/misc/police-tux.jpeg)
+
+##### Subpages:
+
+<p></p>
+{% include security.html %}

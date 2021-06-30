@@ -10,3 +10,8 @@ permalink: /linux/
 Here you will find various tutorials applicable for any distribution of GNU/Linux.
 
 ![](../img/linux/Tux-G2-273x300.png)
+
+##### Subpages:
+
+<p></p>
+{% include linux.html %}
