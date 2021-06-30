@@ -1,9 +1,0 @@
-I"Á<p>In this tutorial I am going to show you how to change the permissions of a /dev/sdx file to allow you to create a vmdk to boot a Windows installation on another HDD. In this tutorial I am going to use ferb as the user.</p>
-
-<p>NOTE: I have not tried this tutorial with a processor that does not support VT-x/AMD-V. Check your bios to make sure that this is enabled.</p>
-
-<hr />
-
-<div style="text-align: center;"><span style="background-color: #ff0000; color: #ffffff;">WARNING:<br />
-Raw disk access is for expert users only. Incorrect usage can lead to massive data loss. Never mount a drive that is being accessed by a virtual machine. Doing so WILL cause unrecoverable data corruption.</span></div>
-:ET

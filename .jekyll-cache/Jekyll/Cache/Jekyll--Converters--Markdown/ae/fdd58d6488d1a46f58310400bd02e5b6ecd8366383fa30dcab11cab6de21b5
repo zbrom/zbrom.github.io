@@ -1,0 +1,73 @@
+I"<p>This tutorial explains how to map the Windows key to open KMenu in KDE</p>
+
+<hr />
+
+<p>Open a Konsole window</p>
+
+<p>Find the key to which Super_L (the Windows key comes up as Super_L) is mapped by running xev (it will open a small window that waits for your keyboard input and displays it in the console window where xev was started. Closing the window will cause xev to terminate.</p>
+
+<p>Code:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>xev</td>
+      <td>grep Super_L</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code>state 0x0, keycode 133 (keysym 0xffeb, Super_L), same_screen YES,</code><br />
+<code>state 0x40, keycode 133 (keysym 0xffeb, Super_L), same_screen YES,</code><br />
+</div>
+</div>
+
+<p>The keycode above came from my keyboard. Please run xev to determine what your keycode is.</p>
+
+<p>Create a file under ~/.kde/Autostart to remap the above discovered keycode to F13. I called my file win-key.sh as per the doc at Mepis (also Mepis mentioned mapping the keycode to the string Menu, but that did not work for me).</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code>#!/bin/bash</code><br />
+<code>xmodmap -e 'keycode 133 = F13'</code><br />
+</div>
+</div>
+
+<p>Make the script you created in Step 3 executable:</p>
+
+<p><code>chmod +x ~/.kde/Autostart/win-key.sh</code></p>
+
+<p>Execute the script manually (it will be executed every time you restart)</p>
+
+<p><code>~/.kde/Autostart/win-key.sh</code></p>
+
+<p>Confirm the keycode has been mapped to F13</p>
+
+<p>Code:</p>
+
+<p><code>xev | grep F13</code></p>
+
+<p>Output:</p>
+
+<div style="height: 200px; width: 675px; border: 1px solid #cccccc; font-style: normal; font-variant: normal; font-weight: normal; line-height: 26px; font-size-adjust: none; font-stretch: normal; overflow: auto;">
+<div class="sites-codeblock sites-codesnippet-block">
+<code>state 0x0, keycode 133 (keysym 0xffca, F13), same_screen YES,</code><br />
+<code> state 0x40, keycode 133 (keysym 0xffca, F13), same_screen YES,</code><br />
+</div>
+</div>
+
+<p>KMenu –&gt; Search: Global Keyboard Shortcuts –&gt; KDE Component: Plasma Desktop Shell –&gt; Activate Application Launcher Widget –&gt; Custom (Click None)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Press the Windows Key and None should change to F13
+</code></pre></div></div>
+
+<p>Click OK.</p>
+
+<p>The Windows key should now activate the KMenu. Remember, if you have programs using the Windows key as the Meta key then your programs will now be broken (I lied when I said I would only warn you once).</p>
+
+<h5 id="references">References:</h5>
+
+<p><a href="https://cvalcarcel.wordpress.com/2012/01/07/kubuntu-11-10-mapping-the-windows-key-to-activate-kmenu/" target="_blank">https://cvalcarcel.wordpress.com/2012/01/07/kubuntu-11-10-mapping-the-windows-key-to-activate-kmenu/</a></p>
+:ET

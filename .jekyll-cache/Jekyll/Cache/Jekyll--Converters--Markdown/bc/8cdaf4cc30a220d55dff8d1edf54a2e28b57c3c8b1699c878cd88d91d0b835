@@ -1,0 +1,16 @@
+I"�<p>This tutorial deals with changing the default file associations in GNOME 3.  For some cases, an application may not appear when you right click on the file –&gt; Choose Open With –&gt; Choose Other Applications.  This will correct the association and allow you to choose default applications with ease.</p>
+
+<hr />
+
+<p>First locate the application (.desktop file) in /usr/share/applications.</p>
+
+<p>Edit the desired file with your favorite text editor</p>
+
+<p><code>nano /usr/share/applications/[your application].desktop</code></p>
+
+<p>Modify the Exec line to look like</p>
+
+<p><code>Exec=yourprogram %U</code></p>
+
+<p>The application should now appear in your application list.</p>
+:ET

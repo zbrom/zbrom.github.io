@@ -1,0 +1,28 @@
+I"%<p>In the latest GNOME update to GNOME 3.14, there is a different method required to move the window buttons in GNOME. This tutorial will outline an easy customization scheme.</p>
+
+<hr />
+
+<p>If not already installed, install gnome-tweak-tool</p>
+
+<p>Open gnome-tweak-tool</p>
+
+<p><code>gnome-tweak-tool</code></p>
+
+<p>Click on Windows, and ensure that Maximize and Minimize are turned on.</p>
+
+<p><img src="../../../img/linux/gnome_button_layout_01.png" alt="" /></p>
+
+<p>Open dconf-editor using terminal or alt-F2</p>
+
+<p><code>dconf-editor</code></p>
+
+<p>Navigate to the following:</p>
+
+<p><code>org.gnome.desktop.wm.preferences</code></p>
+
+<p>Adjust the button-layout to read:</p>
+
+<p><code>close,maximize,minimize</code></p>
+
+<p><img src="../../../img/linux/gnome_button_layout_02.png" alt="" /></p>
+:ET

@@ -1,0 +1,14 @@
+I"ì<p>This section is dedicated to the configuration and customization of the GNU Network Object Model Environment (GNOME).  These tutorials were completed using Arch Linux, but should apply to other distros as well.</p>
+
+<p><img src="../../img/linux/gnomelogo.png" alt="" style="float: left;margin-right: 7px;margin-top: 7px;" /></p>
+
+<h5 id="subpages">Subpages:</h5>
+
+<p><a href="/linux/gnome/gnome_outdated" target="_blank">Enable Outdated Extensions</a></p>
+
+<p><a href="/linux/gnome/gnome_file" target="_blank">File Associations</a></p>
+
+<p><a href="/linux/gnome/gnome_button_layout" target="_blank">Move Close, Maximize, &amp; Minimize to the Left</a></p>
+
+<p><a href="/linux/gnome/gnome_titlebar" target="_blank">Reduce Titlebar Height</a></p>
+:ET

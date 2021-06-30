@@ -1,0 +1,10 @@
+I"µ<p>Open a terminal and run the following command with root privileges.</p>
+
+<p><code>sed -i "/title_vertical_pad/s/value=\"[0-9]\{1,2\}\"/value=\"0\"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml</code></p>
+
+<p>Adjust value=\‚Äù0\ to your liking; I chose 7.</p>
+
+<p>e.g.</p>
+
+<p><code>sed -i "/title_vertical_pad/s/value=\"[0-9]\{1,2\}\"/value=\"7\"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml</code></p>
+:ET
