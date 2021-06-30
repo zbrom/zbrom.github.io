@@ -1,0 +1,17 @@
+I"é<p>This section is dedicated to the configuration and customization of the Arch Linux distro. All tutorials were completed in an Arch Linux x86_64 environment.</p>
+
+<p><img src="../img/arch/archlinux-logo-dark-90dpi.png" alt="" /></p>
+
+<p><a href="/arch/basic_cli">Basic CLI</a>
+            <a href="/arch/easter_eggs">Easter Eggs</a>
+            <a href="/arch/encrypted_btrfs">Encrypted BTRFS Root w/ EFI</a>
+            <a href="/arch/encrypted_dropbox">Encrypted Dropbox w/ EncFS</a>              <br />
+            <a href="/arch/encrypted_lvm">Encrypted LVM/Root</a>    <br />
+            <a href="/arch/env_variables">Environment Variables</a>
+            <a href="/arch/fonts">Fonts</a>  <br />
+            <a href="/arch/authenticator">Google Authenticator</a>                   <br />
+            <a href="/arch/gpg">GPG Encryption</a> <br />
+            <a href="/arch/pacstrap_lts">Pacstrap Linux-LTS</a>    <br />
+            <a href="/arch/tearfree_intel">Tear Free Video Intel</a></p>
+
+:ET
