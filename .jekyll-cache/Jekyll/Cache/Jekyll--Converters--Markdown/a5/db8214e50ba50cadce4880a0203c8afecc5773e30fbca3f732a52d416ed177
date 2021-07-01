@@ -1,0 +1,37 @@
+I"�<p>Google is one of the largest offenders when it comes to privacy.  Google makes money off of your data, through massive collection of every interaction you have while using their services.  All of your data is being logged, sold to third parties, and even be handed over to government agencies.  The process of deGoogling your life can be an arduous task.  ghorr will help in aleviating some of the difficulty in order to help you regain control of your data, and finding secure alternative platforms for your data.  Every step you take, brings you closer to restoring your digital freedom.</p>
+
+<hr />
+
+<h4 id="recommended-search-engines">Recommended Search Engines:</h4>
+
+<p><strong><em>Changing your search provider from Google to a more privacy respecting provider is one of the easiest first steps you can do when beginning the process of deGoogling your life.</em></strong></p>
+
+<ul>
+  <li>
+    <p><strong><a href="https://duckduckgo.com" target="_blank">DuckDuckGo</a></strong> – A very versatile and private search engine based in the US.  Provides good search results, obtained from over 400 sources, including Bing, Wikipedia, and their own crawler (DuckDuckBot).  It is mostly <a href="https://github.com/duckduckgo" target="_blank">open source</a>, is highly customizable, and features <a href="https://duckduckgo.com/bang" target="_blank">bang shortcuts</a> for ease of use.  Highly recommended by ghorr.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://ghorr.org/search" target="_blank">ghorr Search</a></strong> – Utilizes DuckDuckGo.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://startpage.com" target="_blank">Startpage</a></strong> – A private search engine based in the Netherlands.  Provides good search results with sources obtained from Google.  Not open source.  ghorr recommends using Startpage if you require results from Google, but are unable to receive them with DuckDuckGo.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://qwant.com" target="_blank">Qwant</a></strong> – A private search engine based in France.  Provides good search results obtained from Bing, along with their own crawler.  It is partly <a href="https://github.com/qwant" target="_blank">open source</a>.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://searx.me" target="_blank">SearX</a></strong> – A private search engine based in the France, however, you can run your own instance or use any of the <a href="https://searx.space" target="_blank">public instances</a>.  It is very customizable and <a href="https://github.com/searx/searx" target="_blank">open source</a>.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://metager.de/en" target="_blank">MetaGer</a></strong> – A private search engine based in Germany.  Provides good search results, using a few small crawlers and data from various other search providers.  It is <a href="https://gitlab.metager.de/open-source/MetaGer" target="_blank">open source</a> and uses the same <a href="https://duckduckgo.com/bang" target="_blank">bang shortcuts</a> as DuckDuckGo</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.mojeek.com" target="_blank">Mojeek</a></strong> – A private search engine based in the UK.  They have their own crawler and index.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://search.brave.com" target="_blank">Brave Search</a></strong> – One of the newest options, developed by Brave Software, who also develops the <a href="https://brave.com" target="_blank">Brave Browser</a>.  It is a privacy focused browser based in the US.  Brave Search is based on Tailcat, a privacy-focused browser they acquired from Cliqz.  Brave Search features anonymized crawling, anti-bias, no trackers, and an ad-free option.  Brave search does not currently appear to have any source code published.</p>
+  </li>
+</ul>
+
+<p><strong><em>Note:</em></strong> Many of the private search engines above are technically metasearch engines, since they source their results from other search engines.</p>
+:ET

@@ -11,6 +11,8 @@ This section is dedicated to the configuration and customization of the Arch Lin
 
 ![](../img/arch/archlinux-logo-dark-90dpi.png)
 
+____________________________________
+
 ##### Subpages:
 
 <p></p>

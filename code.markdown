@@ -11,6 +11,8 @@ Here you will find open source code that you are free to use for personal use.  
 
 ![](../img/code/codeblocks-tux.jpg)
 
+____________________________________
+
 ##### Subpages:
 
 <p></p>

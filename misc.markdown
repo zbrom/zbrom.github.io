@@ -11,6 +11,8 @@ Here you will find some miscellaneous content, mostly related to GNU/Linux.
 
 ![](../img/misc/linux-tux-born-2-frag.jpg)
 
+____________________________________
+
 ##### Subpages:
 
 <p></p>

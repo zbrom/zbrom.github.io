@@ -11,6 +11,8 @@ Here you will find various tutorials applicable for any distribution of GNU/Linu
 
 ![](../img/linux/Tux-G2-273x300.png)
 
+____________________________________
+
 ##### Subpages:
 
 <p></p>
