@@ -1,0 +1,70 @@
+I"�'<p>If you are using a Gmail account for all of your e-mail communications, you should definitely consider an alternative provider.  Google is utilizing your account as a <a href="https://www.techspot.com/news/80134-google-uses-receipts-sent-gmail-log-online-purchases.html" target="_blank">massive collection tool</a>.  All of your purchase history, upcoming events, and connections are being data mined by their systems.  Additionally, they are using data obtained from your Gmail account to profile you for ads and marketing.  Additionally, the content contained in your messages is being shared with Google and potentially third parties as well.  There is becoming a growing need for alternatives to Google services, along with email providers that strive to protect individual privacy and offer some level of anonymity to their users. The following services are recommended by ghorr.  Additionally, ghorr recommends that all users take necessary precaution by encrypting all email messages using GPG or some other form of encryption.  Here is a <a href="../../arch/gpg" target="_blank">guide</a> how to set up GPG encryption in Arch.</p>
+
+<hr />
+
+<h5 id="private-e-mail-providers-with-encryption-free--paid-options">Private E-mail Providers with Encryption (Free &amp; Paid Options):</h5>
+
+<ul>
+  <li>
+    <p><strong><a href="https://riseup.net" target="_blank">Riseup</a></strong> – Great provider that protects individual privacy and freedoms of the user base; free VPN service is also available with them.  They provide full disk encryption on their servers, along with personally encrypted e-mail storage.  They support integrated PGP encryption.  Free accounts available with an invitation.  Free plans have up to 1 GB storage.  They offer e-mail aliases as well.  They run the service entirely off donations.  Personal information is not required to create an account.  All services are available on <a href="https://2019.www.torproject.org/docs/tor-onion-service.html.en" target="_blank">TOR</a> as well.  Great support for third party e-mail clients.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://protonmail.com" target="_blank">ProtonMail</a></strong> – End-to-end encryption, 2FA, and zero access encryption for e-mail, calendar, and contact information.  Stored on servers in Switzerland.  Messages are automatically encrypted with other ProtonMail users.  Supports the PGP standard.  Messages are encrypted on the server at rest, with zero-knowledge encryption.  Free plans have 500 MB storage, with a 150 message per day limit.  Paid plans start at €4.00 per month, with support for your own custom domain name.  Apps for Android and iOS, along with support for third party e-mail clients.  Accepts crypto for payments.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://mailfence.com" target="_blank">Mailfence</a></strong> – A privacy oriented office suite offering secure e-mail, calendars, documents, and contacts.  Mailfence can work as a replacement for Google’s G Suite.  Stored on servers in Belgium.  The provide offer end-to-end encryption, 2FA and digital signatures.  Supports the PGP standard.  Free plans have 500 MB storage for e-mail and 500 MB storage for documents.  Paid plans start at €2.50 per month, with support for your own custom domain name.  They have mobile and web apps and support synchronizing with third party e-mail clients.  Accepts crypto for payments.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://tutanota.com" target="_blank">Tutanota</a></strong> – End-to-end encryption with 2FA, open source, stored on servers in Germany.  Provides encrypted e-mail and calendar.  Messages are fully encrypted, including the subject line.  Tutanota does not use PGP, but rather AES 128 / RSA 2048, with plans to even have <a href="https://tutanota.com/blog/posts/pqmail-launch-post-quantum-cryptography" target="_blank">quantum-resistant encryption</a> in the future.  They provide desktop, mobile, and web apps.  Their Android app is FOSS, available on <a href="https://f-droid.org/en/packages/de.tutao.tutanota" target="_blank">F-Droid</a>.  Free plans have 1 GB storage.  Paid plans start at €12 per year, with support for your own custom domain name.  Only accepts credit card or PayPal for payment; no crypto payments supported.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://ctemplar.com" target="_blank">CTemplar</a></strong> – Claims to be “The most secure &amp; private email service in the world.”  End-to-end encryption with 2FA, 100% open source, stored on servers in Iceland.  Iceland has some of the <a href="https://ctemplar.com/icelandic-privacy-laws" target="_blank">strongest privacy laws</a> in the world.  Strong encryption with 4096-bit RSA and the OpenPGP standard.  Site has zero logs, IP addresses are stripped from e-mails, additionally supports self-destructing e-mails with a Dead Man’s timer.  Service has anonymous signup options.  They provide desktop, mobile, and web apps.  Their Android app is FOSS, available on <a href="https://f-droid.org/en/packages/com.ctemplar.app.fdroid" target="_blank">F-Droid</a>.  Free plans are available by invitation only.  Free plans have 1 GB storage, with a 200 message per day limit.  Paid plans are somewhat expensive compared to other services, starting at $8 per month, with support for your own custom domain name.  Accepts crypto for payments, including Monero for anonymous payment.</p>
+  </li>
+</ul>
+
+<h5 id="private-e-mail-providers-with-encryption-paid-options-only">Private E-mail Providers with Encryption (Paid Options Only):</h5>
+
+<ul>
+  <li>
+    <p><strong><a href="https://mailbox.org/en" target="_blank">Mailbox</a></strong> – End-to-end encryption with 2FA, open source, stored on servers in Germany.  Mailbox can work as a complete replacement for Google’s G Suite.  Mailbox provides e-mail, contacts, calendar, and file storage apps, along with their own browser-based office suite.  Supports the PGP standard.  Messages are encrypted on the server at rest.  They support third party e-mail clients, along with calendar and contact syncing.  Support for your own custom domains.  Plans start at €1 per month for 2 GB storage.  Accepts crypto for payments.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://posteo.de/en" target="_blank">Posteo</a></strong> – End-to-end encryption with 2FA, stored on servers in Germany.  Provides encrypted e-mail, calendar, contacts, and notes.  Messages are fully encrypted, including the subject line.  They support third party e-mail clients.  Plans start at €1 per month for 2 GB storage.  No support for custom domains.  Only accepts PayPal, credit card, bank transfer, or cash by mail; no crypto payments supported.</p>
+  </li>
+</ul>
+
+<h5 id="free-e-mail-providers-with-custom-domain-support">Free E-mail Providers with Custom Domain Support:</h5>
+
+<p><em>For those looking to DeGoogle without breaking the bank, here are some excellent free options to start with.  You can choose to create a free account or pair it with a custom domain name.  Using a custom domain will allow you the possibility of being able to switch e-mail providers without having to change your e-mail address each time.  ghorr recommends pairing these services with GPG encryption for increased security, and do not keep messages stored on their servers indefinitely.</em></p>
+
+<ul>
+  <li>
+    <p><strong><a href="https://zoho.com" target="_blank">Zoho</a></strong> – Great overall provider; a true Google Apps alternative; zoho is feature rich and even allows you to use your own custom domain name.  If you are simply looking to DeGoogle, this is an excellent alternative to the Google suite.  <a href="https://www.zoho.com/know-your-datacenter.html" target="_blank">Datacenters</a> are located in the US, Australia, China, India, and Europe.  The <a href="https://www.zoho.com/mail/zohomail-pricing.html" target="_blank">Forever Free Plan</a> supports up to five users, with 5 GB storage per user.  You can have up to 30 e-mail aliases per account.  Supports web access and mobile access via their app.  IMAP, POP3, and Active Sync are no longer included in the free plan.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://mail.yandex.com" target="_blank">Yandex</a></strong> – Does not require a phone number to register an account and allows you to use your own custom domain name.  If you are simply looking to DeGoogle, this is an alternative to the Google suite.  The company is based in Russia, with data centers in Europe and Russia.  You are able to register for an account from either their <a href="https://mail.yandex.com" target="_blank">English</a> or <a href="https://mail.yandex.com" target="_blank">Russian sites</a>.  Free accounts have 10 GB of storage.  You can have up to 10 e-mail aliases per domain name.  Great support for third party e-mail clients.  IMAP and POP3 are supported.</p>
+  </li>
+</ul>
+
+<h5 id="free-e-mail-providers">Free E-mail Providers:</h5>
+
+<ul>
+  <li>
+    <p><strong><a href="https://disroot.org/en" target="_blank">Disroot</a></strong> – Disroot includes a full suite of products including E-mail, Nextcloud Cloud Server, XMPP Chat, Pastebin, Cryptpad encrypted office suite, VoIP software, and even their own Searx Search instance.  E-mail accounts have 1 GB of storage.  IMAP and POP3 are supported.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://gmx.com/" target="_blank">GMX</a></strong> – GMX Mail was founded in 1997, making the service more than 20 years old.  Supports PGP encryption using the Mailvelope browser extension.  Does not require a phone number to register an account.  You can have up to 10 e-mail aliases per account.  Free accounts have 2 GB of storage.  IMAP and POP3 are supported.</p>
+  </li>
+</ul>
+
+<h5 id="burner-accounts">Burner Accounts:</h5>
+
+<ul>
+  <li>
+    <p><strong><a href="https://10minutemail.com/" target="_blank">10 Minute Mail</a></strong> – Disposable email account, which remains valid for 10 minutes.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://maildrop.cc/" target="_blank">MailDrop</a></strong> – A persistent disposable email account, with no required password, supports an alias for your account as well.</p>
+  </li>
+</ul>
+:ET
