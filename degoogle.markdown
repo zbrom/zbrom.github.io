@@ -11,7 +11,7 @@ permalink: /degoogle/
 #### Introduction:
 
 <p></p>
-![](../img/degoogle/degoogle.png){:target="_blank"}{:style="float: left;margin-right: 7px;margin-top: 7px;"}
+![](../img/degoogle/degoogle.png){:style="float: left;margin-right: 7px;margin-top: 7px;"}
 Virtually all of the big tech companies have no respect for your privacy.  Google is especially intertwined in many of our lives, often without us being fully aware.  Google makes money off of your data, through massive collection of every interaction you have while using their services.  Other big tech companies to avoid include Microsoft, Facebook, Twitter, and YouTube.  All of your data is being logged, sold to third parties, and even be handed over to government agencies.  The process of DeGoogling your life can be an arduous task.  ghorr will help in aleviating some of the difficulty, in order to help you regain control of your data, and find secure alternative platforms for your data.  Reducing your digital footprint in order to restore privacy from the big tech companies is a process.  Every step you take, brings you closer to regaining digital freedom.
 
 This section of the site will contain recommendations on how to eliminate Google services from your life. Expect new content to follow. ghorr currently recommends running LineageOS without gapps installed. Check out this introductory video to DeGoogled phones by Rob Braxman.

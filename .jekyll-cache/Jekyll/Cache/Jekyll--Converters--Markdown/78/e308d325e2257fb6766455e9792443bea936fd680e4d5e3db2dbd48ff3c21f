@@ -1,0 +1,37 @@
+I"�<p>Google Chrome has ultimately become the de facto web browser used by most individuals on both their computers and mobile devices.  Unfortunately, the browser is a massive data collection tool.  The <a href="https://www.washingtonpost.com/technology/2019/06/21/google-chrome-has-become-surveillance-software-its-time-switch" target="_blank">Washington Post</a> reports that the browser delivered 11,000 tracker cookies in a single week.  Mozilla Firefox is not perfect, but at least <a href="https://blog.mozilla.org/en/products/firefox/firefox-data-privacy-promise" target="_blank">their business model</a> does not depend on massive data collection.</p>
+
+<p>Now more than ever, it has become imperative to ditch Google Chrome.  Their new tracking and data collection system, called Federated Learning of Cohorts (FLoC) is designed to group individuals into cohorts based on their browsing history and interests for the purpose of delivering advertisements.</p>
+
+<p>Another excellent technique to utilize is called browser isolation, where the user isolates particular services to a given browser (e.g., only loading Gmail from a Chromium browser).</p>
+
+<hr />
+
+<h5 id="privacy-browsers-desktop">Privacy Browsers (Desktop):</h5>
+
+<ul>
+  <li>
+    <p><strong><a href="https://www.mozilla.org/en-US/firefox/new" target="_blank">Firefox</a></strong> – Hardened Firefox is currently one of the best options when it comes to choosing a privacy browser.  The browser is open source, does not depend on Google, and can be heavily customized.  ghorr recommends <a href="https://restoreprivacy.com/firefox-privacy" target="_blank">hardening</a> the browser in order to remove telemetry, remove tracking elements, and prevent fingerprinting.  Additionally, several extensions are recommended for privacy and security.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://brave.com" target="_blank">Brave</a></strong> – Brave is a chromium-based web browser and has a lot of privacy features out of the box.  The browser has a built-in ad blocker and anti-fingerprinting protection.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.torproject.org/download" target="_blank">Tor Browser</a></strong> – The Tor browser is a hardened and secured version of Firefox that runs on the Tor network bet default, making it great for privacy and anonymity.  The browser does well with blocking fingerprinting.  Additionally, the browser can easily be used to prevent JavaScript.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/Eloston/ungoogled-chromium" target="_blank">Ungoogled Chromium</a></strong> – Essentially the open source version of Google Chromium with all dependencies for Google web services removed.</p>
+  </li>
+</ul>
+
+<h5 id="privacy-browsers-android">Privacy Browsers (Android):</h5>
+
+<ul>
+  <li>
+    <p><strong><a href="https://f-droid.org/en/packages/org.mozilla.fennec_fdroid" target="_blank">Fennec</a></strong> – The F-Droid version of Firefox for Android.  Offers improved tracking protection from over 2,000 online trackers.  Proprietary bits and telemetry is removed by default.  The browser is open source, does not depend on Google, and can be heavily customized.  ghorr still recommends <a href="https://restoreprivacy.com/firefox-privacy" target="_blank">hardening</a> the browser in order to remove telemetry, remove tracking elements, and prevent fingerprinting.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://bromite.org" target="_blank">Bromite</a></strong> – The F-Droid version of Firefox for Android.  Offers improved tracking protection from over 2,000 online trackers.  Proprietary bits and telemetry is removed by default.  The browser is open source, does not depend on Google, and can be heavily customized.  ghorr still recommends <a href="https://restoreprivacy.com/firefox-privacy" target="_blank">hardening</a> the browser in order to remove telemetry, remove tracking elements, and prevent fingerprinting.</p>
+  </li>
+</ul>
+
+:ET

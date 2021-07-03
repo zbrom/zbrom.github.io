@@ -1,0 +1,19 @@
+I"�<p>Google Chrome has ultimately become the de facto web browser used by most individuals on both their computers and mobile devices.  Unfortunately, the browser is a massive data collection tool.  The <a href="https://www.washingtonpost.com/technology/2019/06/21/google-chrome-has-become-surveillance-software-its-time-switch" target="_blank">Washington Post</a> reports that the browser delivered 11,000 tracker cookies in a single week.  Mozilla Firefox is not perfect, but at least <a href="https://blog.mozilla.org/en/products/firefox/firefox-data-privacy-promise" target="_blank">their business model</a> does not depend on massive data collection.</p>
+
+<p>Now more than ever, it has become imperative to ditch Google Chrome.  Their new tracking and data collection system, called Federated Learning of Cohorts (FLoC) is designed to group individuals into cohorts based on their browsing history and interests for the purpose of delivering advertisements.</p>
+
+<hr />
+
+<h5 id="privacy-browsers">Privacy Browsers:</h5>
+
+<ul>
+  <li><strong><a href="https://www.mozilla.org/en-US/firefox/new" target="_blank">Firefox</a></strong> – Hardened Firefox is currently one of the best options when it comes to choosing a privacy browser.  The browser is open source, does not depend on Google, and can be heavily customized.  ghorr recommends <a href="https://restoreprivacy.com/firefox-privacy" target="_blank">hardening</a> the browser in order to remove telemetry tracking elements, and prevent fingerprinting.</li>
+</ul>
+
+<h5 id="privacy-browsers-android">Privacy Browsers (Android:</h5>
+
+<ul>
+  <li><strong><a href="https://mailbox.org/en" target="_blank">Mailbox</a></strong> – End-to-end encryption with 2FA, open source, stored on servers in Germany.  Mailbox can work as a complete replacement for Google’s G Suite.  Mailbox provides e-mail, contacts, calendar, and file storage apps, along with their own browser-based office suite.  Supports the PGP standard.  Messages are encrypted on the server at rest.  They support third party e-mail clients, along with calendar and contact syncing.  Support for your own custom domains.  Plans start at €1 per month for 2 GB storage.  Accepts crypto for payments.</li>
+</ul>
+
+:ET
