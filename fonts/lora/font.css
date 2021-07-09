@@ -1,0 +1,64 @@
+@font-face {
+	font-family: 'Lora';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkq0.woff2 */
+		url('Lora_400.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkqs.woff */
+		url('Lora_400.woff') format('woff'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkqk.eot */
+		url('Lora_400.eot?#iefix') format('embedded-opentype'),
+		/* from https://fonts.gstatic.com/l/font?kit=0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkqo&skey=1d294b6d956fb8e&v=v17#Lora */
+		url('Lora_400.svg#Lora') format('svg'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkqg.ttf */
+		url('Lora_400.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkq0.woff2 */
+		url('Lora_700.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkqs.woff */
+		url('Lora_700.woff') format('woff'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkqk.eot */
+		url('Lora_700.eot?#iefix') format('embedded-opentype'),
+		/* from https://fonts.gstatic.com/l/font?kit=0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkqo&skey=1d294b6d956fb8e&v=v17#Lora */
+		url('Lora_700.svg#Lora') format('svg'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkqg.ttf */
+		url('Lora_700.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: italic;
+	font-weight: 400;
+	src:
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92nA.woff2 */
+		url('Lora_400italic.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92mg.woff */
+		url('Lora_400italic.woff') format('woff'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92mA.eot */
+		url('Lora_400italic.eot?#iefix') format('embedded-opentype'),
+		/* from https://fonts.gstatic.com/l/font?kit=0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92mw&skey=92aaeeb853a906d8&v=v17#Lora */
+		url('Lora_400italic.svg#Lora') format('svg'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92mQ.ttf */
+		url('Lora_400italic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: italic;
+	font-weight: 700;
+	src:
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0Coq92nA.woff2 */
+		url('Lora_700italic.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0Coq92mg.woff */
+		url('Lora_700italic.woff') format('woff'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0Coq92mA.eot */
+		url('Lora_700italic.eot?#iefix') format('embedded-opentype'),
+		/* from https://fonts.gstatic.com/l/font?kit=0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0Coq92mw&skey=92aaeeb853a906d8&v=v17#Lora */
+		url('Lora_700italic.svg#Lora') format('svg'),
+		/* from https://fonts.gstatic.com/s/lora/v17/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-C0Coq92mQ.ttf */
+		url('Lora_700italic.ttf') format('truetype');
+}
