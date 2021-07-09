@@ -71,6 +71,7 @@ LocalFileSigLevel = Optional<br>
 </div>
 
 Working example:
+
 ![](../../img/arch/pacman.png)
 
 What is the meaning of life?

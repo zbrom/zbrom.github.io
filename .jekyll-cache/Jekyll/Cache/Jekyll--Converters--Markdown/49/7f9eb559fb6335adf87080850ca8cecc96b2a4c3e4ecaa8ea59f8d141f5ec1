@@ -1,4 +1,4 @@
-I"=
+I"E
 <p>Here you will find some tutorials for some fun Arch hidden features, otherwise known as easter eggs.</p>
 
 <hr />
@@ -64,8 +64,9 @@ LocalFileSigLevel = Optional<br />
 </div>
 </div>
 
-<p>Working example:
-<img src="../../img/arch/pacman.png" alt="" /></p>
+<p>Working example:</p>
+
+<p><img src="../../img/arch/pacman.png" alt="" /></p>
 
 <p>What is the meaning of life?
 Using vim (vi improved), you can find out the meaning of life…or death?
