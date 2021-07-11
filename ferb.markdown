@@ -6,8 +6,7 @@ date: 2021-06-25
 categories : dropdown
 permalink: /bios/ferb
 ---
-![](../../img/bios/ferb.jpeg)
-
+![](../../img/bios/ferb.jpeg){:style="float: left;margin-right: 7px;margin-top: 7px;"}
 Hello, my name is Ferb. I’m not the so called “English Major” type so bear with me. I run Arch Linux on all of my machines and all of my drives are encrypted.
 
 I have always been interested in everything technical. In my 4th grade science class my teacher taught me how to create a simple circuit that lit a flash light bulb. By the time I was 12 I rewired the electricity in an entire house by myself. My interest in electrical things continued into high school. My senior year I had this old Samsung radio from the 1980s that I would take fishing with me because it could last a really long time on batteries. In my mind the only thing it lacked was the ability to play music from an iPod. So I took the thing apart and played with it until I got an axillary port wired into it.
