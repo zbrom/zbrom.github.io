@@ -15,4 +15,4 @@ ____________________________________
 
 ##### Subpages:
 
-[F-Droid Privileged Extension](/linux/android/f-droid_priv){:target="_blank"}
+[F-Droid Privileged Extension](/linux/android/f-droid_priv)
