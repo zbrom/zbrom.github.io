@@ -1,0 +1,12 @@
+I"§<p>This guide will explain how to install F-Droid as a privileged app on a deGoogled phone.  This will allow you to still receive automatic updates for your apps after deGoogling.  Similar functionality is built into the <a href="https://lineage.microg.org" target="_blank">LineageOS for microG</a> ROM, but this tutorial will allow you to setup something similar for those not interested in running microG.</p>
+
+<hr />
+
+<p>You first need to download <a href="https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota" target="_blank">F-Droid Privileged Extension OTA</a> from the F-Droid website.  Supposedly, you should be able to directly flash this within TWRP, however, this did not work for me on LineageOS 18.1.  So manual intervention was required.</p>
+
+<p>Extract the zip file, then cd into the folder</p>
+
+<p><code>unzip x org.fdroid.fdroid.privileged*</code></p>
+
+<p><code>cd org.fdroid.fdroid.privileged*</code></p>
+:ET

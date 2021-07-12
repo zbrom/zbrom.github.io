@@ -1,4 +1,4 @@
-I"y<p>Here you will find various tutorials applicable for any distribution of GNU/Linux.</p>
+I"®<p>Here you will find various tutorials applicable for any distribution of GNU/Linux.</p>
 
 <p><img src="../img/linux/Tux-G2-273x300.png" alt="" /></p>
 
@@ -7,6 +7,7 @@
 <h5 id="subpages">Subpages:</h5>
 
 <p></p>
+<li><a href="/linux/android">Android Config</a></li>
 <li><a href="/linux/backup_dd">Backup with dd Command</a></li>
 <li><a href="/linux/disable_journal">Disable Journaling</a></li>
 <li><a href="/linux/gentoo_install">Gentoo Installation</a></li>

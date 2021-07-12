@@ -1,0 +1,50 @@
+I"Q<p>This guide will explain how to install F-Droid as a privileged app on a deGoogled phone.  This will allow you to still receive automatic updates for your apps after deGoogling.  Similar functionality is built into the <a href="https://lineage.microg.org" target="_blank">LineageOS for microG</a> ROM, but this tutorial will allow you to setup something similar for those not interested in running microG.  In order to install the F-Droid Privileged Extension on a non-rooted phone, you will need to enter a Root ADB shell on your device.  This can easily by completed using <a href="https://twrp.me" target="_blank">TWRP Recovery</a>.</p>
+
+<hr />
+
+<h5 id="download-extension">Download Extension</h5>
+
+<p>You first need to download <a href="https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota" target="_blank">F-Droid Privileged Extension OTA</a> from the F-Droid website.  Supposedly, you should be able to directly flash this within TWRP Recovery, however, this did not work for me on LineageOS 18.1.  So manual intervention was required.</p>
+
+<p>Extract the zip file:</p>
+
+<p><code>unzip org.fdroid.fdroid.privileged* -d ./f-droid</code></p>
+
+<p>Change directory into the folder:</p>
+
+<p><code>cd f-droid</code></p>
+
+<h5 id="adb-root-shell">ADB Root Shell</h5>
+
+<p>Attain a Root ADB shell on your device (e.g., boot into TWRP recovery):</p>
+
+<p>Select <span style="background-color: #ff9900;">mount</span></p>
+
+<p>Check <span style="background-color: #ff9900;">System</span></p>
+
+<p>Hit the back button</p>
+
+<p>Connect your phone to your computer and run the following commands in adb.</p>
+
+<p>List connected adb devices:</p>
+
+<p><code>adb devices</code></p>
+
+<p>Ensure you have root:</p>
+
+<p>adb root</p>
+
+<p>Remount your partitions:</p>
+
+<p>adb remount</p>
+
+<p>Install F-Droid and F-Droid Privileged Extension.</p>
+
+<p><code>adb push F-DroidPrivilegedExtension.apk /system/priv-app/</code></p>
+
+<p><code>adb push permissions_org.fdroid.fdroid.privileged.xml /system/etc/permissions/</code></p>
+
+<p><code>adb push F-Droid.apk /system/app/</code></p>
+
+<p><code>adb push 80-fdroid.sh /system/addon.d/</code></p>
+:ET
