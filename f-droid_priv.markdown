@@ -47,11 +47,11 @@ List connected adb devices:
 
 Ensure you have root:
 
-adb root
+<code>adb root</code>
 
 Remount your partitions:
 
-adb remount
+<code>adb remount</code>
 
 Install F-Droid and F-Droid Privileged Extension.
 
