@@ -63,13 +63,13 @@ Install F-Droid and F-Droid Privileged Extension.
 
 <code>adb push 80-fdroid.sh /system/addon.d/</code>
 
-Reboot your phone and launch F-Droid.  Ensure that "Automatically install updates" is enabled under settings.
+Reboot your phone and launch F-Droid.  Enable "Automatically install updates" under settings.
 
 [![](../../../img/linux/android/f-droid_priv_03_sm.jpg)](../../../img/linux/android/f-droid_priv_03.jpg){:target="_blank"}
 
 Your phone should now receive automatic updates from F-Droid for all of your installed apps.
 
-***Optional***: Installing the [F-Droid Privileged Extension](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged){:target="_blank"} from F-Droid after completing these steps should in theory keep the F-Droid Privileged Extension up to date (untested).
+***Optional***: Installing the [F-Droid Privileged Extension](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged){:target="_blank"} from F-Droid, after completing these steps, should in theory keep the F-Droid Privileged Extension up to date (untested).
 
 ##### References
 
