@@ -69,8 +69,6 @@ Reboot your phone and launch F-Droid.  Enable "Automatically install updates" un
 
 Your phone should now receive automatic updates from F-Droid for all of your installed apps.
 
-***Optional***: Installing the [F-Droid Privileged Extension](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged){:target="_blank"} from F-Droid, after completing these steps, should in theory keep the F-Droid Privileged Extension up to date (untested).
-
 ##### References
 
 [https://www.reddit.com/r/fdroid/comments/jdz7ij/install_fdroid_as_system_app_using_nanodroidfdroid](https://www.reddit.com/r/fdroid/comments/jdz7ij/install_fdroid_as_system_app_using_nanodroidfdroid){:target="_blank"}
