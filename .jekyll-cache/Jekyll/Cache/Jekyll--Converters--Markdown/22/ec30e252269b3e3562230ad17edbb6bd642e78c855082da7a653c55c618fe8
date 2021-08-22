@@ -1,4 +1,4 @@
-I"<p>This guide will explain how to install F-Droid as a privileged app on a deGoogled phone.  This will allow you to still receive automatic updates for your apps after deGoogling.  Similar functionality is built into the <a href="https://lineage.microg.org" target="_blank">LineageOS for microG</a> ROM, but this tutorial will allow you to setup something similar for those not interested in running microG.  In order to install the F-Droid Privileged Extension on a non-rooted phone, you will need to enter a Root ADB shell on your device.  This can easily by completed using <a href="https://twrp.me" target="_blank">TWRP Recovery</a>.</p>
+I"�<p>This guide will explain how to install F-Droid as a privileged app on a deGoogled phone.  This will allow you to still receive automatic updates for your apps after deGoogling.  Similar functionality is built into the <a href="https://lineage.microg.org" target="_blank">LineageOS for microG</a> ROM, but this tutorial will allow you to setup something similar for those not interested in running microG.  In order to install the F-Droid Privileged Extension on a non-rooted phone, you will need to enter a Root ADB shell on your device.  This can easily by completed using <a href="https://twrp.me" target="_blank">TWRP Recovery</a>.</p>
 
 <hr />
 
@@ -38,11 +38,11 @@
 
 <p>Ensure you have root:</p>
 
-<p>adb root</p>
+<p><code>adb root</code></p>
 
 <p>Remount your partitions:</p>
 
-<p>adb remount</p>
+<p><code>adb remount</code></p>
 
 <p>Install F-Droid and F-Droid Privileged Extension.</p>
 
@@ -54,12 +54,13 @@
 
 <p><code>adb push 80-fdroid.sh /system/addon.d/</code></p>
 
-<p>Reboot your phone and launch F-Droid.  Ensure that Automatically install updates is enabled.</p>
+<p>Reboot your phone and launch F-Droid.  Enable “Automatically install updates” under settings.</p>
 
 <p><a href="../../../img/linux/android/f-droid_priv_03.jpg" target="_blank"><img src="../../../img/linux/android/f-droid_priv_03_sm.jpg" alt="" /></a></p>
 
 <p>Your phone should now receive automatic updates from F-Droid for all of your installed apps.</p>
 
-<p><em>Optional</em>: Installing F-Droid Privileged Extension from F-Droid after completing these steps should in theory keep the F-Droid Privileged Extension up to date (untested).</p>
+<h5 id="references">References</h5>
 
+<p><a href="https://www.reddit.com/r/fdroid/comments/jdz7ij/install_fdroid_as_system_app_using_nanodroidfdroid" target="_blank">https://www.reddit.com/r/fdroid/comments/jdz7ij/install_fdroid_as_system_app_using_nanodroidfdroid</a></p>
 :ET

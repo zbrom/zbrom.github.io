@@ -15,4 +15,5 @@ ____________________________________
 
 ##### Subpages:
 
-[F-Droid Privileged Extension](/linux/android/f-droid_priv)
+<p></p>
+{% include android.html %}
